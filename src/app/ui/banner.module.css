@@ -1,0 +1,84 @@
+.test {
+    left: 0;
+    top: 0;
+    position: relative;
+}
+
+.container {
+    position: relative;
+}
+
+.canvasContainer {
+    overflow: hidden;
+}
+
+.stars {
+    display: block;
+}
+
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    opacity: 0;
+    z-index: 10;
+}
+
+.fadeInLogo {
+    animation: fadein 5s forwards;
+    -webkit-animation: fadeIn 5s forwards;
+    -moz-animation: fadeIn 5s forwards;
+    -o-animation: fadeIn 5s forwards;
+    -ms-animation: fadeIn 5s forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

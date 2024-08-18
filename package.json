@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "flask-dev": "python3 -m flask --app api/index run -p 5328",
+    "flask-dev": "python3 -m flask --app src/api/index run -p 5328",
     "next-dev": "next dev",
     "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
     "build": "next build",
@@ -11,16 +11,22 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "typescript": "^5",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "autoprefixer": "10.4.14",
+    "clsx": "^2.1.1",
+    "concurrently": "^8.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "autoprefixer": "10.4.14",
-    "concurrently": "^8.0.1",
-    "next": "14.2.5"
+    "mongodb": "^6.8.0",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "typescript": "^5",
+    "vercel": "^35.2.0"
+  },
+  "devDependencies": {
+    "cypress": "^13.13.2"
   }
 }
