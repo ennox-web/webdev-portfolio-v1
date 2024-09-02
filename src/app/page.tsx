@@ -1,14 +1,15 @@
 import Image from "next/image";
 import styles from './page.module.css';
 import Banner from "./ui/banner";
+import Menu from "./ui/menu";
 
 export default function Home() {
   return (
     <main className={styles.main}>
-      <Banner />
+      {/* <Banner /> */}
 
-      <div className={styles.center}>
-        test
+      <div className={styles.mainPage}>
+        <Menu />
       </div>
     </main>
   );

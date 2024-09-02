@@ -7,6 +7,7 @@ export default class Canvas {
 
     width: number = 0;
     height: number = 0;
+    scrollbarWidth: number = 17;
 
     constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas;
@@ -17,10 +18,12 @@ export default class Canvas {
     }
 
     resize() {
-        this.width = window.innerWidth;
+        console.log("blep?", window.innerWidth);
+        this.width = window.innerWidth - this.scrollbarWidth;
         this.height = window.innerHeight;
         this.canvas.width = this.frame.width = this.width;
         this.canvas.height = this.frame.height = this.height;
+        console.log("blep2?", this.width);
     }
 
     clearRect() {
@@ -35,8 +38,8 @@ export default class Canvas {
             skyGradient.addColorStop(1, "#282a3a");
 
             this.buffer.fillStyle = skyGradient;
-
             this.buffer.fillRect(0, 0, this.width, this.height);
+
             this.buffer.fill();
         }
     }

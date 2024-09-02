@@ -12,6 +12,13 @@
     overflow: hidden;
 }
 
+.glowEffect {
+    width: var(--full-width);
+    height: 100vh;
+    position: absolute;
+    background: var(--logo-Radial);
+}
+
 .stars {
     display: block;
 }
@@ -31,6 +38,7 @@
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;
 }
+
 
 .fadeInLogo {
     animation: fadein 5s forwards;

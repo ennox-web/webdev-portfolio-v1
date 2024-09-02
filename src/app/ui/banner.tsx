@@ -40,6 +40,7 @@ export default function Banner() {
 				</div>
 				
 				<div className={styles.canvasContainer}>
+					<div className={styles.glowEffect}></div>
 					<canvas ref={canvasRef} className={styles.stars}></canvas>
 				</div>
 			</div>
