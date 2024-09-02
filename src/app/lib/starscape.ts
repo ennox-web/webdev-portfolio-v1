@@ -66,11 +66,11 @@ class Particle {
 
 class ShootingStar extends Particle {
     opacity: number = 0;
-    opacityDelta: number = 0.01;
+    opacityDelta: number = 0.02;
     tailDelta: number = 0.01;
     tailLengthDelta: number = 0;
     maxTail: number = 300;
-    lifeTime: number = 500;
+    lifeTime: number = 450;
     currentTail: number = 0;
     shootingStarColor: string = "rgba(255, 255, 255, ";
     color: string = "rgba(255, 221, 157, ";
@@ -105,7 +105,13 @@ class ShootingStar extends Particle {
         this.tailLengthDelta += this.tailDelta
         this.currentTail = this.maxTail * this.tailLengthDelta;
 
-        super.update(width, height);
+        // super.update(width, height);
+        this.x += this.vx;
+        this.y += this.vy;
+        if(this.x > width || this.x < 0 || this.y > height || this.y < 0) {
+            this.isSpawning = false;
+            this.isDying = true;
+        }
     }
 
     draw(buffer: CanvasRenderingContext2D) {
@@ -175,11 +181,11 @@ export default class StarScape {
     starCount: number;
 
     /* Shooting Star Data */
-    shootingStarInterval: number = 500;
+    shootingStarInterval: number = 1000;
     shootingStarArray: ShootingStar[] = [];
     shootingStarSpeed = {
-        min: 15,
-        max: 20,
+        min: 10,
+        max: 14,
     }
     shootingStarRadius: number = 3;
 
@@ -220,8 +226,8 @@ export default class StarScape {
 
     createShootingStars() {
         const shootingStar = new ShootingStar(
-            randomRange(this.mainCanvas.width / 2, this.mainCanvas.width),
-            randomRange(0, this.mainCanvas.height / 2),
+            randomRange(this.mainCanvas.width / 3, this.mainCanvas.width),
+            randomRange(0, this.mainCanvas.height / 4),
             randomRange(this.shootingStarSpeed.min, this.shootingStarSpeed.max),
             degreesToRads(this.starAngle),
             this.shootingStarRadius,

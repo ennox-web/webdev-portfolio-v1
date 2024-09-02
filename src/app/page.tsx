@@ -10,6 +10,14 @@ export default function Home() {
       <div className={styles.center}>
         test
       </div>
+    </main>
+  );
+}
+
+/*
+      <div className={styles.center}>
+        test
+      </div>
       <div className={styles.grid}>
         <a
           href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
@@ -61,6 +69,4 @@ export default function Home() {
           </p>
         </a>
       </div>
-    </main>
-  );
-}
+*/

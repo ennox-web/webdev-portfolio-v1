@@ -16,13 +16,20 @@
     display: block;
 }
 
-.logo {
+.logoContainer {
+    width: 100%;
+    height: auto;
+    max-width: 20vw;
+    aspect-ratio: 431 / 111;
+    z-index: 10;
     position: absolute;
     left: 50%;
     top: 50%;
+}
+
+.logo {
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;
-    z-index: 10;
 }
 
 .fadeInLogo {

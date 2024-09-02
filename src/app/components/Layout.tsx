@@ -8,11 +8,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <div className={styles.mainbody}>
-                <div>
+                {/* <div>
                     <div>
                         <SideNav />
                     </div>
-                </div>
+                </div> */}
 
                 <main className={styles.mainpage}>{children}</main>
             </div>
