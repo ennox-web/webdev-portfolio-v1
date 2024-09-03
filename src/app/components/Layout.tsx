@@ -1,4 +1,4 @@
-import SideNav from "../ui/sidenav";
+import SideNav from "../ui/obsolete/sidenav";
 import styles from './Layout.module.css';
 import { Inter } from "next/font/google";
 

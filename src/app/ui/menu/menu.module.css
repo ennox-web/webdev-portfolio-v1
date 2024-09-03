@@ -1,7 +1,5 @@
 .menuContainer {
-    width: 35%;
     height: 100%;
-    max-height: 100vh;
     position: sticky;
     border-radius: 0px 20px;
     border-top: 10px solid var(--text-link);
@@ -12,12 +10,6 @@
     padding-top: 1.5rem;
     padding-left: 2.5rem;
     padding-right: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.contentPage {
-    height: 100%;
-    padding: 5rem;
 }
 
 .summary {
@@ -28,6 +20,7 @@
 
 .menuItems {
     padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
 .socials {

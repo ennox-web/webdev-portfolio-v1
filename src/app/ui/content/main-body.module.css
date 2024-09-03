@@ -1,0 +1,10 @@
+.mainBody {
+    height: 100%;
+    position: sticky;
+    border-radius: 0px 20px;
+    border-bottom: 10px solid var(--text-link);
+    border-right: 10px solid var(--text-link); 
+    padding-top: 1.5rem;
+    padding-right: 2.5rem;
+    padding-left: 1.5rem;
+}

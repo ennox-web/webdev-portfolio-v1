@@ -51,11 +51,11 @@
   --full-width: calc(100vw - var(--scrollbar-width));
   --background-start: #282a3a;
   --logo-Radial: radial-gradient(50% 50% at 50% 50%, rgba(200, 169, 126, 0.15) 0%, rgba(40, 42, 58, 0.20) 45%);
-  --UI-BG1-Radial: radial-gradient(50% 50% at 50% 50%, rgba(200, 169, 126, 0.15) 0%, rgba(40, 42, 58, 0.20) 85%);
+  --UI-BG1-Radial: radial-gradient(50% 50% at 50% 50%, rgba(200, 169, 126, 0.22) 0%, rgba(40, 42, 58, 0.30) 85%);
   --UI-BG1-Accent:
     var(--UI-BG1-Radial), 
     linear-gradient(180deg, #282a3a 0%, #282A3A 24%, #282A3A 53%, #393C55 100%);
-
+    
     /* TEXT */
     --text-link: #C8A97E;
     --text-menuActive: #F6F6F6;

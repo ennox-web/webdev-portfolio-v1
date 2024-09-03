@@ -11,20 +11,18 @@ export default function Menu() {
 We have always done things a little differently. Some would say the hard way, we would say the right way. The OLD FASHIONED line celebrates top quality ingredients and preparation by hand to create an all-natural* beef jerky like no other.`;
 
     return (
-        <div className={styles.contentPage}>
-            <div className={styles.menuContainer}>
-                <div className={styles.menu}>
-                    <h1>{name}</h1>
-                    <h3>{position}</h3>
-                    <p className={styles.summary}>{summary}</p>
+        <div className={styles.menuContainer}>
+            <div className={styles.menu}>
+                <h1>{name}</h1>
+                <h3>{position}</h3>
+                <p className={styles.summary}>{summary}</p>
 
-                    <div className={styles.menuItems}>
-                        <MenuLinks />
-                    </div>
+                <div className={styles.menuItems}>
+                    <MenuLinks />
+                </div>
 
-                    <div className={styles.socials}>
-                        <Socials />
-                    </div>
+                <div className={styles.socials}>
+                    <Socials />
                 </div>
             </div>
         </div>
