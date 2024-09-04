@@ -117,7 +117,7 @@ export default function ExperienceSection() {
             {
                 experienceData.map((expData) => {
                     return (
-                        <ExperienceBlock expData={expData} />
+                        <ExperienceBlock expData={expData} key={expData.start} />
                     );
                 })
             }
