@@ -1,0 +1,29 @@
+.chipContainer {
+    border-radius: 100px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--background-start);
+}
+
+.languageChip {
+    background: #877153;
+}
+
+.techChip {
+    background: #573862;
+}
+
+.devopChip {
+    background: #345F62;
+}
+
+.testautoChip {
+    background: #31315C;
+}
+
+.chip {
+    padding: 0 0.7rem;
+    font-size: 16px;
+    font-weight: 600;
+}

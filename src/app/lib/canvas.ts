@@ -18,12 +18,10 @@ export default class Canvas {
     }
 
     resize() {
-        console.log("blep?", window.innerWidth);
         this.width = window.innerWidth - this.scrollbarWidth;
         this.height = window.innerHeight;
         this.canvas.width = this.frame.width = this.width;
         this.canvas.height = this.frame.height = this.height;
-        console.log("blep2?", this.width);
     }
 
     clearRect() {

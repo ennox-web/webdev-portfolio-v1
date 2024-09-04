@@ -1,3 +1,7 @@
+.menuItems {
+    display: flex;
+    flex-direction: column;
+}
 
 .itemIndicator {
     display: flex;
@@ -5,6 +9,7 @@
     height: 1px;
     background: var(--text-menuInactive);
     transition: width 0.5s linear;
+    margin-right: 9px;
 }
 
 .menulink {
@@ -20,6 +25,19 @@
         flex: none;
         justify-content: flex-start;
     } */
+}
+
+.menulinkActive {
+    color: var(--text-link) !important;
+}
+
+.menulinkActive .icon {
+    opacity: 1 !important;
+}
+
+.menulinkActive .itemIndicator {
+    width: 58px !important;
+    background: var(--text-link) !important;
 }
 
 .linkName {

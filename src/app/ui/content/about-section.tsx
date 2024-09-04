@@ -1,14 +1,15 @@
 import BodyTitleSeparator from "./body-title-separator";
-import styles from "./summary.module.css";
+import styles from "./about-section.module.css";
+import { useEffect } from "react";
+import { scrollSpy } from "react-scroll";
+
 
 export default function Summary() {
+    const title: string = "About Me";
     const summary: string = "test";
     return (
         <div className={styles.summaryContainer}>
-            <div>
-                <h3>About Me</h3>
-                <BodyTitleSeparator />
-            </div>
+            <BodyTitleSeparator title={title} />
             <div>
                 {summary}
             </div>

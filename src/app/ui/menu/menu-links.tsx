@@ -1,7 +1,8 @@
 'use client'
 
+import { useEffect } from 'react';
 import styles from './menu-links.module.css'
-import { Link } from 'react-scroll';
+import { Events, Link, scroller, scrollSpy } from 'react-scroll';
 
 interface MenuItemInterface {
     name: string;
@@ -11,38 +12,38 @@ interface MenuItemInterface {
 const links: MenuItemInterface[] = [
     {
         name: 'About',
-        section: 'aboutSection'
+        section: 'about'
     },
     {
         name: 'Skills',
-        section: 'skillSection'
+        section: 'skills'
     },
     {
         name: 'Experience',
-        section: 'experienceSection'
+        section: 'experience'
     },
     {
         name: 'Projects',
-        section: 'projectSection'
+        section: 'projects'
     }
 ]
 
 function MenuLink({link}: {link: MenuItemInterface}) {
     return (
-        <div className={styles.linkname}>
+        <div className={styles.menulink} key={link.name}>
             <Link
-                key={link.name}
+                activeClass={styles.menulinkActive}
                 to={link.section}
                 smooth={true}
-                duration = {500}
+                duration={500}
+                containerId='mainBody'
+                spy={true}
+                hashSpy={true}
+                className={styles.linkName}
             >
-                <div className={styles.menulink}>
-                    <span className={styles.itemIndicator} />
-                    <div className={styles.linkName}>
-                        <h4>{link.name}</h4>
-                        <span className={`material-symbols-outlined ${styles.icon}`}>{'keyboard_double_arrow_right'}</span>
-                    </div>
-                </div>
+                <span className={styles.itemIndicator} />
+                <h4>{link.name}</h4>
+                <span className={`material-symbols-outlined ${styles.icon}`}>{'keyboard_double_arrow_right'}</span>
             </Link>
         </div>
     )
@@ -50,12 +51,12 @@ function MenuLink({link}: {link: MenuItemInterface}) {
 
 export default function MenuLinks(){
     return (
-        <>
+        <div className={styles.menuItems}>
             {
                 links.map((link) => {
                     return MenuLink({link});
                 })
             }
-        </>
+        </div>
     )
 }

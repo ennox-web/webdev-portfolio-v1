@@ -1,3 +1,6 @@
+"use client"
+
+import { Element } from "react-scroll";
 import MenuLinks from "./menu-links";
 import styles from "./menu.module.css";
 import Socials from "./socials";
