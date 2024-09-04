@@ -33,7 +33,7 @@ export default function SkillsSection() {
             {
                 skillTypes.map((skillType) => {
                     return (
-                        <SkillType type={skillType.type} title={skillType.title} />
+                        <SkillType type={skillType.type} title={skillType.title} key={skillType.type} />
                     );
                 })
             }
