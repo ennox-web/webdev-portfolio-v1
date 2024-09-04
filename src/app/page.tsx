@@ -7,7 +7,7 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
-      {/* <Banner /> */}
+      <Banner />
 
       <div className={styles.mainContent}>
         <div className={styles.menu}>
