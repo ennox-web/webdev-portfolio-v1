@@ -6,20 +6,45 @@
     border: 1px solid var(--background-start);
 }
 
+.chipContainer:hover {
+    border: 1px solid var(--text-menuActive);
+    box-shadow: 0px 4px 4.5px 0px rgba(0, 0, 0, 0.6);
+}
+
 .languageChip {
     background: #877153;
+}
+
+.languageChip:hover {
+    color: #523A19;
+    background: var(--text-link);
 }
 
 .techChip {
     background: #573862;
 }
 
+.techChip:hover {
+    color: #482255;
+    background: #D889E9;
+}
+
 .devopChip {
     background: #345F62;
 }
 
+.devopChip:hover {
+    color: #0B4549;
+    background: #64B5BB;
+}
+
 .testautoChip {
     background: #31315C;
+}
+
+.testautoChip:hover {
+    color: #222269;
+    background: #9595F5;
 }
 
 .chip {

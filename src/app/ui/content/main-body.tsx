@@ -5,6 +5,7 @@ import styles from "./main-body.module.css"
 import Summary from "./about-section"
 import SkillsSection from "./skills/skills-section"
 import { useEffect } from "react";
+import ExperienceSection from "./experience/experience-section"
 
 export default function MainBody() {
     return (
@@ -15,7 +16,9 @@ export default function MainBody() {
             <Element name="skills" className={styles.section}>
                 <SkillsSection />
             </Element>
-            <Element name="experience" className={styles.section}></Element>
+            <Element name="experience" className={styles.section}>
+                <ExperienceSection />
+            </Element>
             <Element name="projects" className={styles.section}></Element>
         </div>
     )

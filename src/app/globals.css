@@ -55,12 +55,14 @@
   --UI-BG1-Accent:
     var(--UI-BG1-Radial), 
     linear-gradient(180deg, #282a3a 0%, #282A3A 24%, #282A3A 53%, #393C55 100%);
-    
-    /* TEXT */
-    --text-link: #C8A97E;
-    --text-menuActive: #F6F6F6;
-    --text-menuInactive: #C9CFFE;
-    --text02: #A8A9B4;
+  
+  --UI-BG1-Highlight: #393C55;
+  
+  /* TEXT */
+  --text-link: #C8A97E;
+  --text-menuActive: #F6F6F6;
+  --text-menuInactive: #C9CFFE;
+  --text02: #A8A9B4;
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -139,6 +141,14 @@ h4 {
   font-weight: 600;
   line-height: 30px;
   letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
   text-transform: uppercase;
 }
 
