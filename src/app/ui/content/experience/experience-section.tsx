@@ -1,9 +1,11 @@
 import BodyTitleSeparator from '../body-title-separator'
 import ExperienceBlock, { ExperienceDataInterface } from './experience-block'
 import styles from './experience-section.module.css'
+import { v4 as uuid } from 'uuid';
 
 const experienceData: ExperienceDataInterface[] = [
     {
+        id: uuid(),
         start: "Jan 2020",
         end: "Feb 2024",
         company: "Sony Interactive Entertainment",
@@ -39,7 +41,8 @@ const experienceData: ExperienceDataInterface[] = [
         }
     },
     {
-        start: "Jan 2020",
+        id: uuid(),
+        start: "June 2018",
         end: "Feb 2024",
         company: "Sony Interactive Entertainment",
         title: "Software Engineer II",
@@ -74,7 +77,8 @@ const experienceData: ExperienceDataInterface[] = [
         }
     },
     {
-        start: "Jan 2020",
+        id: uuid(),
+        start: "Feb 2016",
         end: "Feb 2024",
         company: "Sony Interactive Entertainment",
         title: "Software Engineer II",
@@ -117,7 +121,7 @@ export default function ExperienceSection() {
             {
                 experienceData.map((expData) => {
                     return (
-                        <ExperienceBlock expData={expData} key={expData.start} />
+                        <ExperienceBlock expData={expData} key={expData.id} />
                     );
                 })
             }

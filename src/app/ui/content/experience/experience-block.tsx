@@ -3,6 +3,7 @@ import SkillChipLists from '../skills/skill-chip-lists';
 import styles from './experience-block.module.css';
 
 export interface ExperienceDataInterface {
+    id: string;
     start: string;
     end: string;
     company: string;
@@ -21,7 +22,7 @@ export default function ExperienceBlock({expData}: {expData: ExperienceDataInter
                     <span className={styles.title}>{expData.title}</span>
                 </div>
                 <span>{expData.description}</span>
-                <SkillChipLists skills={expData.skills} />
+                <SkillChipLists skills={expData.skills} id={expData.id} />
             </div>
         </div>
     )
