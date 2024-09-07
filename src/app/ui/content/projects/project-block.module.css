@@ -1,0 +1,17 @@
+.projectBlockContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 8px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-bottom: 8px;
+}

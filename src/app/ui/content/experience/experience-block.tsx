@@ -22,7 +22,7 @@ export default function ExperienceBlock({expData}: {expData: ExperienceDataInter
                     <span className={styles.title}>{expData.title}</span>
                 </div>
                 <span>{expData.description}</span>
-                <SkillChipLists skills={expData.skills} id={expData.id} />
+                <SkillChipLists skills={expData.skills} />
             </div>
         </div>
     )

@@ -21,7 +21,7 @@ export default function MainBody() {
                 <ExperienceSection />
             </Element>
             <Element name="projects" className={styles.section}>
-                {/* <ProjectsSection /> */}
+                <ProjectsSection />
             </Element>
         </div>
     )
