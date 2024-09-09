@@ -51,6 +51,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform 0.5s ease-out;
+    transform: scale(1);
+}
+
+.image:hover {
+    transform: scale(2.4);
 }
 
 .imageContainer {
@@ -59,4 +65,14 @@
     height: 100%;
     width: 100%;
     border-radius: 20px;
+}
+
+@container style(--is-mobile: true) {
+    .overlay {
+        background: none;
+    }
+
+    .image {
+        object-fit: scale-down;
+    }
 }

@@ -18,7 +18,8 @@ export default class Canvas {
     }
 
     resize() {
-        this.width = window.innerWidth - this.scrollbarWidth;
+        // this.width = window.innerWidth - this.scrollbarWidth;
+        this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.canvas.width = this.frame.width = this.width;
         this.canvas.height = this.frame.height = this.height;

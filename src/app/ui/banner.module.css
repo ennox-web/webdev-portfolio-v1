@@ -34,6 +34,12 @@
     top: 50%;
 }
 
+@container style(--is-mobile: true) {
+    .logoContainer {
+        max-width: 30vw;
+    }
+}
+
 .logo {
     transform: translateX(-50%) translateY(-50%);
     opacity: 0;

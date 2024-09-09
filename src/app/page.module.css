@@ -20,15 +20,40 @@
   height: 100%;
   padding: 4rem;
   width: 40%;
-  min-width: 515px;
-  min-height: 750px;
 }
 .content {
   height: 100%;
   padding: 4rem;
   width: 60%;
-  min-width: 515px;
-  min-height: 750px;
+}
+
+@container style(--is-mobile: true) {
+  .mainContent {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    background: var(--UI-BG1-Basic);
+  }
+  
+  .menu {
+    width: var(--full-width);
+    padding: 1rem;
+  }
+
+  .content {
+    width: var(--full-width);
+    padding: 1rem;
+  }
+}
+
+@container style(--is-small-screen: true) {
+  .menu {
+    width: 45%;
+  }
+
+  .content {
+    width: 55%;
+  }
 }
 
 /* .description {
