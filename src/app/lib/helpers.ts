@@ -30,3 +30,31 @@ export function calculateLayerIndex() {
 }
 
 const randI = (min: number, max = min + (min = 0)) => (Math.random() * (max - min) + min) | 0;
+
+export function calcSlideUpStyle(delayOrder: number) {
+    const transitionDelta = 0.2;
+    const transitionDelay = 0.1 + (transitionDelta * delayOrder);
+
+    return {
+        opacity: 1,
+        transform: "translate(0, 0)",
+        transitionProperty: "transform, opacity",
+        transitionTimingFunction: "ease",
+        transitionDuration: "0.6s",
+        transitionDelay: `${transitionDelay}s`,
+    }
+}
+
+export function calcSlideLeftStyle(delayOrder: number) {
+    const transitionDelta = 0.2;
+    const transitionDelay = 0.1 + (transitionDelta * delayOrder);
+
+    return {
+        opacity: 1,
+        transform: "translate(0, 0)",
+        transitionProperty: "transform, opacity",
+        transitionTimingFunction: "ease",
+        transitionDuration: "0.6s",
+        transitionDelay: `${transitionDelay}s`,
+    }
+}

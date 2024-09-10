@@ -17,33 +17,33 @@ export default function ImageOverlay({onClose, image}: {onClose: () => void, ima
         const yOrigin = ((event.pageY - imageRect.top) / imageRect.height) * 100;
 
         const styleMove = {
-            transformOrigin: `${xOrigin}% ${yOrigin}%`
-        }
-
-        setStyle(styleMove);
-    }
-
-    const OnTouchMove = (event: React.TouchEvent) => {
-        if(imageRef.current == null) return;
-
-        const imageRect = imageRef.current.getBoundingClientRect();
-
-        const xOrigin = ((event.touches[0].pageX - imageRect.left) /imageRect.width) * 100;
-        const yOrigin = ((event.touches[0].pageY - imageRect.top) / imageRect.height) * 100;
-
-        const styleMove = {
             transformOrigin: `${xOrigin}% ${yOrigin}%`,
-            transform: "scale(2.4)"
         }
 
         setStyle(styleMove);
     }
 
-    const OnTouchEnd = () => {
-        setStyle({
-            transform: "scale(1)"
-        });
-    }
+    // const OnTouchMove = (event: React.TouchEvent) => {
+    //     if(imageRef.current == null) return;
+
+    //     const imageRect = imageRef.current.getBoundingClientRect();
+
+    //     const xOrigin = ((event.touches[0].pageX - imageRect.left) /imageRect.width) * 100;
+    //     const yOrigin = ((event.touches[0].pageY - imageRect.top) / imageRect.height) * 100;
+
+    //     const styleMove = {
+    //         transformOrigin: `${xOrigin}% ${yOrigin}%`,
+    //         transform: "scale(2.4)"
+    //     }
+
+    //     setStyle(styleMove);
+    // }
+
+    // const OnTouchEnd = () => {
+    //     setStyle({
+    //         transform: "scale(1)"
+    //     });
+    // }
 
     const overlayContent = (
         <div className={styles.imageOverlayContainer} onClick={onClose}>
@@ -57,8 +57,6 @@ export default function ImageOverlay({onClose, image}: {onClose: () => void, ima
                         fill={true}
                         style={style}
                         onMouseMove={OnMouseMove}
-                        onTouchMove={OnTouchMove}
-                        onTouchEnd={OnTouchEnd}
                     />
                 </div>
             </div>

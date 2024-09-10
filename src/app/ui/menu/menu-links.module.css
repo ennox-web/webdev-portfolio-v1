@@ -15,9 +15,12 @@
 .menulink {
     display: inline-flex;
     align-items: center;
-    gap: 13px;
+    gap: 1rem;
     color: var(--text-menuInactive);
     justify-content: flex-start;
+    opacity: 0;
+    transform: translate(0%, 40%);
+
 
     /* @media (min-width: 768px) {
         padding: 0.5rem;
@@ -43,7 +46,7 @@
 .linkName {
     display: inline-flex;
     align-items: center;
-    gap: 4px;
+    gap: 0.2rem;
 }
 
 .menulink:hover {

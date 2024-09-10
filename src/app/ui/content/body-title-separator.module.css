@@ -9,3 +9,8 @@
     height: 1px;
     background: var(--text-menuActive);
 }
+
+.preAnim {
+    opacity: 0;
+    transform: translate(100%, 0%);
+}
