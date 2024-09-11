@@ -1,5 +1,10 @@
 .skillTypeContainer {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 1rem;
+}
+
+.preAnim {
+    opacity: 0;
+    transform: translate(100%, 0%);
 }

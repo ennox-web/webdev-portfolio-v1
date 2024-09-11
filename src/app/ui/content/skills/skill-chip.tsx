@@ -1,4 +1,6 @@
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
 import styles from "./skill-chip.module.css";
+import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
 const chipStyles: {[id: string]: string} = {
     "lang": styles.languageChip,
@@ -7,10 +9,14 @@ const chipStyles: {[id: string]: string} = {
     "testauto": styles.testautoChip,
 }
 
-export default function SkillChip({type, skill}: {type: string, skill: string}) {
+export default function SkillChip({type, skill, delayOrder=0}: {type: string, skill: string, delayOrder?: number}) {
     return (
-        <div className={`${styles.chipContainer} ${chipStyles[type]}`}>
+        <CustomIntersectionObserver 
+            classes={`${styles.chipContainer} ${styles.preAnim} ${chipStyles[type]}`}
+            useStyle={true}
+            bottomIn={calcSlideLeftStyle(delayOrder)}
+        >
             <span className={styles.chip}>{skill}</span>
-        </div>
+        </CustomIntersectionObserver>
     )
 }

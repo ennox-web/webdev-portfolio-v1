@@ -20,8 +20,9 @@ export default function Banner() {
 	useEffect(() => {
 		if (canvasRef.current == null) return;
 		if (canvasRef.current.getContext('2d') == null) return;
+        const checkReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
 
-		mainCanvasRef.current = new StarScape(canvasRef.current);
+		mainCanvasRef.current = new StarScape(canvasRef.current, checkReduced);
 
 		requestAnimationFrame(animate);
 	}, [])

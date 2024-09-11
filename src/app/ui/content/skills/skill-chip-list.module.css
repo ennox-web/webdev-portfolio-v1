@@ -1,5 +1,5 @@
 .chipList {
     display: flex;
-    gap: 8px 8px;
+    gap: 0.5rem 0.5rem;
     flex-wrap: wrap;
 }

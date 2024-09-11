@@ -3,6 +3,8 @@
 import { useEffect } from 'react';
 import styles from './menu-links.module.css'
 import { Events, Link, scroller, scrollSpy } from 'react-scroll';
+import CustomIntersectionObserver from '@/app/components/CustomIntersectionObserver';
+import { calcSlideUpStyle } from '@/app/lib/helpers';
 
 interface MenuItemInterface {
     name: string;
@@ -28,9 +30,14 @@ const links: MenuItemInterface[] = [
     }
 ]
 
-function MenuLink({link}: {link: MenuItemInterface}) {
+function MenuLink({link, style}: {link: MenuItemInterface, style: any}) {
     return (
-        <div className={styles.menulink} key={link.name}>
+        <CustomIntersectionObserver
+            classes={`${styles.menulink} ${styles.preAnim}`}
+            useStyle={true}
+            bottomIn={style}
+            key={link.name}
+        >
             <Link
                 activeClass={styles.menulinkActive}
                 to={link.section}
@@ -45,16 +52,19 @@ function MenuLink({link}: {link: MenuItemInterface}) {
                 <h4>{link.name}</h4>
                 <span className={`material-symbols-outlined ${styles.icon}`}>{'keyboard_double_arrow_right'}</span>
             </Link>
-        </div>
+        </CustomIntersectionObserver>
     )
 }
 
-export default function MenuLinks(){
+export default function MenuLinks({delayOrder}: {delayOrder: number}) {
     return (
         <div className={styles.menuItems}>
             {
                 links.map((link) => {
-                    return MenuLink({link});
+                    delayOrder += 1
+                    const style = calcSlideUpStyle(delayOrder);
+
+                    return MenuLink({link, style});
                 })
             }
         </div>

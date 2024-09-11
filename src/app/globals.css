@@ -132,6 +132,14 @@ body {
   }
 }
 
+/* font-size: clamp(0.5rem, 3.5vw, 10rem); 
+viewpoint
+vh
+svh
+lvh
+dvh
+*/
+
 /* MY STUFF */
 h1 {
   font-size: 44px;
