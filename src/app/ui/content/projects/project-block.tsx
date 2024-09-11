@@ -1,6 +1,8 @@
+import CustomIntersectionObserver from '@/app/components/CustomIntersectionObserver';
 import SkillChipLists from '../skills/skill-chip-lists';
 import ImageCardsList from './image-cards-list';
 import styles from './project-block.module.css';
+import { calcSlideLeftStyle } from '@/app/lib/helpers';
 
 export interface ProjectDataInterface {
     id: string;
@@ -15,8 +17,24 @@ export default function ProjectBlock({projData}: {projData: ProjectDataInterface
         <div className={styles.projectBlockContainer}>
             <ImageCardsList images={projData.images} />
             <div className={styles.content}>
-                <h5 className={styles.header}>{projData.name}</h5>
-                <span>{projData.description}</span>
+                <CustomIntersectionObserver
+                    rootMargin="0px 0px 0px 400px"
+                    thresholdValue={0}
+                    classes={styles.preAnim}
+                    useStyle={true}
+                    bottomIn={calcSlideLeftStyle(0)}
+                >
+                    <h5 className={styles.header}>{projData.name}</h5>
+                </CustomIntersectionObserver>
+                <CustomIntersectionObserver
+                    rootMargin="0px 0px 0px 400px"
+                    thresholdValue={0}
+                    classes={styles.preAnim}
+                    useStyle={true}
+                    bottomIn={calcSlideLeftStyle(1)}
+                >
+                    <span>{projData.description}</span>
+                </CustomIntersectionObserver>
                 <SkillChipLists skills={projData.skills} />
             </div>
         </div>

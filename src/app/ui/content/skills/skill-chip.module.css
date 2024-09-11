@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     border: 1px solid var(--background-start);
+    opacity: 0;
+    transform: translate(100%, 0%);
 }
 
 .chipContainer:hover {
@@ -13,6 +15,7 @@
 
 .languageChip {
     background: #877153;
+    color: #FFFBF5;
 }
 
 .languageChip:hover {
@@ -22,6 +25,7 @@
 
 .techChip {
     background: #573862;
+    color: #F5DAFF;
 }
 
 .techChip:hover {
@@ -31,6 +35,7 @@
 
 .devopChip {
     background: #345F62;
+    color: #B1FBFF;
 }
 
 .devopChip:hover {
@@ -40,6 +45,7 @@
 
 .testautoChip {
     background: #31315C;
+    color: #CCCCFF;
 }
 
 .testautoChip:hover {

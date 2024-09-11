@@ -39,10 +39,10 @@ const skills: {[id: string]: string[]} = {
     ]
 }
 
-export default function SkillType({type, title, delayOrder=0}: {type: string, title: string, delayOrder?: number}) {
+export default function SkillType({type, title}: {type: string, title: string}) {
     return (
         <div className={styles.skillTypeContainer}>
-            <BodyTitleSeparator title={title} delayOrder={delayOrder} />
+            <BodyTitleSeparator title={title} />
             <SkillChipList type={type} skills={skills[type]} />
         </div>
     )

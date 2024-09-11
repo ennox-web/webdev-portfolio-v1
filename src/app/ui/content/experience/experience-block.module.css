@@ -42,3 +42,8 @@
     font-weight: 600;
     line-height: 24px;
 }
+
+.preAnim {
+    opacity: 0;
+    transform: translate(100%, 0%);
+}

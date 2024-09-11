@@ -13,6 +13,7 @@ export default function Summary() {
         <div className={styles.summaryContainer}>
             <CustomIntersectionObserver
                 rootMargin="0px 0px 0px 400px"
+                thresholdValue={0}
                 classes={styles.preAnim}
                 useStyle={true}
                 bottomIn={calcSlideLeftStyle(0)}

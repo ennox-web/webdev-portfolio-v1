@@ -28,14 +28,12 @@ const skillTypes: SkillTypeInterface[] = [
 ]
 
 export default function SkillsSection() {
-    var delayOrder = 0;
     return (
         <div className={styles.skillsContainer}>
             {
                 skillTypes.map((skillType) => {
-                    delayOrder += 1;
                     return (
-                        <SkillType type={skillType.type} title={skillType.title} key={skillType.type} delayOrder={delayOrder} />
+                        <SkillType type={skillType.type} title={skillType.title} key={skillType.type} />
                     );
                 })
             }

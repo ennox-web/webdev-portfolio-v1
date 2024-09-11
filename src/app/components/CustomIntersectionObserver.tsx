@@ -12,6 +12,9 @@ export default function CustomIntersectionObserver({
         topOut, 
         bottomIn, 
         bottomOut,
+        onClick,
+        onMouseEnter,
+        onMouseLeave,
     }: {
         children: React.ReactNode,
         rootMargin?: string,
@@ -22,6 +25,9 @@ export default function CustomIntersectionObserver({
         topOut?: string | any,
         bottomIn?: string | any,
         bottomOut?: string | any,
+        onClick?: () => void,
+        onMouseEnter?: () => void,
+        onMouseLeave?: () => void,
     }) {
     const [ref, boundary] = useBoundaryObserver(rootMargin, thresholdValue);
     const [className, setClassName] = useState("");
@@ -61,7 +67,14 @@ export default function CustomIntersectionObserver({
     }, [boundary, classes, topIn, topOut, bottomIn, bottomOut]);
 
     return (
-        <div ref={ref} className={className ? className : undefined} style={styles}>
+        <div 
+            ref={ref} 
+            className={className ? className : undefined} 
+            style={styles} 
+            onClick={onClick} 
+            onMouseEnter={onMouseEnter} 
+            onMouseLeave={onMouseLeave}
+        >
             {children}
         </div>
     );

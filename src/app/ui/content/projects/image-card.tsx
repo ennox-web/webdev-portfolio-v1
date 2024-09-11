@@ -1,6 +1,8 @@
 import Image from "next/image";
 import styles from './image-card.module.css';
 import { MouseEvent, useEffect, useState } from "react";
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
 export class ImageDefinition {
     image: string;
@@ -23,12 +25,14 @@ export class ImageDefinition {
         const hoverTranslateY = translateY - 50;
 
         this.styles.noHover = {
+            "opacity": "1",
             "transform": `rotate(${rotation}deg) translate(${translateX}px, ${translateY}px)`,
             "zIndex": `calc(10 - ${this.index})`
         }
 
         if(index != 0) {
             this.styles.hover = {
+                "opacity": "1",
                 "transform": `rotate(0deg) translate(${translateX}px, ${hoverTranslateY}px)`,
                 "zIndex": `calc(10 - ${this.index})`
             }
@@ -60,13 +64,21 @@ export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: 
     }
 
     return (
-        <div className={`${styles.imageContainer}`} style={style} onClick={onClickDefault} onMouseEnter={onHover} onMouseLeave={onLeaveHover}>
-            <Image 
-                src={image.image} 
-                alt="test image"
-                className={styles.image}
-                fill={true}
-            />
-        </div>
+        <CustomIntersectionObserver
+            thresholdValue={0}
+            classes={`${styles.imageContainer} ${styles.preAnim}`}
+            useStyle={true}
+            bottomIn={style}
+            onClick={onClickDefault} onMouseEnter={onHover} onMouseLeave={onLeaveHover}
+        >
+            <div className={styles.container}>
+                <Image 
+                    src={image.image} 
+                    alt="test image"
+                    className={styles.image}
+                    fill={true}
+                />
+            </div>
+        </CustomIntersectionObserver>
     )
 }
