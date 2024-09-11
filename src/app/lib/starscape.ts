@@ -181,6 +181,7 @@ export default class StarScape {
     starCount: number;
 
     /* Shooting Star Data */
+    reducedMotion: boolean;
     shootingStarInterval: number = 1000;
     shootingStarArray: ShootingStar[] = [];
     shootingStarSpeed = {
@@ -188,12 +189,14 @@ export default class StarScape {
         max: 14,
     }
     shootingStarRadius: number = 3;
+    maxShootingStars: number = 3;
 
     /* States */
     firstDraw: boolean = false;
     heightFlip: boolean = false;
 
-    constructor(canvas: HTMLCanvasElement) {
+    constructor(canvas: HTMLCanvasElement, reducedMotion: boolean = false) {
+        this.reducedMotion = reducedMotion;
         this.mainCanvas = new Canvas(canvas);
         window.addEventListener("resize", this.resize.bind(this));
         this.resize();
@@ -202,9 +205,11 @@ export default class StarScape {
         this.createStars();
 
         // set interval for shooting stars;
-        setInterval(() => {
-            this.createShootingStars();
-        }, this.shootingStarInterval);
+        if(!this.reducedMotion) {
+            setInterval(() => {
+                this.createShootingStars();
+            }, this.shootingStarInterval);
+        }
     }
 
     createStars() {
@@ -225,16 +230,18 @@ export default class StarScape {
     }
 
     createShootingStars() {
-        const shootingStar = new ShootingStar(
-            randomRange(this.mainCanvas.width / 3, this.mainCanvas.width),
-            randomRange(0, this.mainCanvas.height / 4),
-            randomRange(this.shootingStarSpeed.min, this.shootingStarSpeed.max),
-            degreesToRads(this.starAngle),
-            this.shootingStarRadius,
-            0,
-        )
-
-        this.shootingStarArray.push(shootingStar);
+        if(this.shootingStarArray.length < this.maxShootingStars) {
+            const shootingStar = new ShootingStar(
+                randomRange(this.mainCanvas.width / 3, this.mainCanvas.width),
+                randomRange(0, this.mainCanvas.height / 4),
+                randomRange(this.shootingStarSpeed.min, this.shootingStarSpeed.max),
+                degreesToRads(this.starAngle),
+                this.shootingStarRadius,
+                0,
+            )
+    
+            this.shootingStarArray.push(shootingStar);
+        }
     }
 
     validateStars(oldWidth: number, oldHeight: number) {
@@ -314,13 +321,15 @@ export default class StarScape {
             this.mainCanvas.drawBackground();
 
             for (let x = 0; x < this.starArray.length; x++) {
-                this.starArray[x].update(this.mainCanvas.width, this.mainCanvas.height);
+                if(!this.reducedMotion) this.starArray[x].update(this.mainCanvas.width, this.mainCanvas.height);
                 this.starArray[x].draw(this.mainCanvas.buffer);
             }
 
-            for(let x = 0; x < this.shootingStarArray.length; x++) {
-                this.shootingStarArray[x].update(this.mainCanvas.width, this.mainCanvas.height);
-                this.shootingStarArray[x].draw(this.mainCanvas.buffer);
+            if(!this.reducedMotion) {
+                for(let x = 0; x < this.shootingStarArray.length; x++) {
+                    this.shootingStarArray[x].update(this.mainCanvas.width, this.mainCanvas.height);
+                    this.shootingStarArray[x].draw(this.mainCanvas.buffer);
+                }
             }
 
             this.validateShootingStars();

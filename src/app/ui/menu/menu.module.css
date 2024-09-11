@@ -49,3 +49,10 @@
         padding-bottom: 6rem;
     }
 }
+
+@media (prefers-reduced-motion) {
+    .preAnim {
+        opacity: 1;
+        transform: none;
+    }
+}

@@ -19,9 +19,10 @@ export default function ExperienceBlock({expData}: {expData: ExperienceDataInter
         <div className={styles.expBlockContainer}>
             <CustomIntersectionObserver
                 rootMargin="0px 0px 0px 400px"
-                thresholdValue={0}
+                thresholdValue={1}
                 classes={styles.preAnim}
                 useStyle={true}
+                topIn={calcSlideLeftStyle(0)}
                 bottomIn={calcSlideLeftStyle(0)}
             >
                 <span className={`${styles.header} ${styles.dates}`}>{expData.start} — {expData.end}</span>
@@ -52,6 +53,7 @@ export default function ExperienceBlock({expData}: {expData: ExperienceDataInter
                     thresholdValue={0}
                     classes={styles.preAnim}
                     useStyle={true}
+                    topIn={calcSlideLeftStyle(3)}
                     bottomIn={calcSlideLeftStyle(3)}
                 >
                     <span>{expData.description}</span>

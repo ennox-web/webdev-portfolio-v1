@@ -4,6 +4,9 @@
     display: flex;
     align-items: center;
     border: 1px solid var(--background-start);
+}
+
+.preAnim {
     opacity: 0;
     transform: translate(100%, 0%);
 }
@@ -57,4 +60,11 @@
     padding: 0 0.7rem;
     font-size: 16px;
     font-weight: 600;
+}
+
+@media (prefers-reduced-motion) {
+    .preAnim {
+        opacity: 1;
+        transform: none;
+    }
 }

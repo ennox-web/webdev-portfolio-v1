@@ -8,6 +8,7 @@ export default function CustomIntersectionObserver({
         thresholdValue = 1, 
         classes,
         useStyle = false,
+        useStyleWithReduced = false,
         topIn, 
         topOut, 
         bottomIn, 
@@ -21,6 +22,7 @@ export default function CustomIntersectionObserver({
         thresholdValue?: number,
         classes?: string,
         useStyle?: boolean,
+        useStyleWithReduced?: boolean,
         topIn?: string | any,
         topOut?: string | any,
         bottomIn?: string | any,
@@ -34,7 +36,19 @@ export default function CustomIntersectionObserver({
     const [styles, setStyles] = useState({});
 
     useEffect(() => {
+        const checkReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
         // Update the className based on the boundary state.
+        if(checkReduced) {
+            setClassName(`${classes}`);
+            if(useStyleWithReduced) {
+                if(topIn) setStyles(topIn);
+                else if(topOut) setStyles(topOut);
+                else if(bottomIn) setStyles(bottomIn);
+                else if(bottomOut) setStyles(bottomOut);
+            };
+            return;
+        }
+
         switch (boundary) {
             case 'topIn':
                 if(topIn) {

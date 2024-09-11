@@ -45,13 +45,16 @@ export class ImageDefinition {
 
 export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: ImageDefinition, onClickShuffle: (image: ImageDefinition) => void, onClickOpen: (image: ImageDefinition) => void}) {
     const [style, setStyle] = useState(image.styles.noHover);
+    const [isReduced, setIsReduced] = useState(false);
 
     useEffect(() => {
+        const checkReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
+        setIsReduced(checkReduced);
         setStyle(image.styles.noHover);
     }, [image.styles.noHover]);
 
     const onHover = () => {
-        setStyle(image.styles.hover);
+        if(!isReduced) setStyle(image.styles.hover);
     }
 
     const onLeaveHover = () => {
@@ -68,6 +71,7 @@ export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: 
             thresholdValue={0}
             classes={`${styles.imageContainer} ${styles.preAnim}`}
             useStyle={true}
+            useStyleWithReduced={true}
             bottomIn={style}
             onClick={onClickDefault} onMouseEnter={onHover} onMouseLeave={onLeaveHover}
         >

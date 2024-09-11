@@ -33,7 +33,7 @@ const links: MenuItemInterface[] = [
 function MenuLink({link, style}: {link: MenuItemInterface, style: any}) {
     return (
         <CustomIntersectionObserver
-            classes={styles.menulink}
+            classes={`${styles.menulink} ${styles.preAnim}`}
             useStyle={true}
             bottomIn={style}
             key={link.name}

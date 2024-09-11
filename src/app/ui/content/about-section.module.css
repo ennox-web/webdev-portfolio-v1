@@ -9,6 +9,14 @@
     transform: translate(100%, 0%);
 }
 
+
+@media (prefers-reduced-motion) {
+    .preAnim {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 /* .anim {
     animation-duration: 0.6s;
     animation-name: slideIn;

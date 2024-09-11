@@ -20,7 +20,7 @@ export default function ImageCardsList({images}: {images: string[]}) {
             updateImageList.unshift(imageCard);
             updateImageList.forEach((image, index) => {
                 image.recalculateStyles(index);
-            })
+            });
             setImageList([...updateImageList]);
         }
     }

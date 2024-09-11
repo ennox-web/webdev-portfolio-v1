@@ -76,3 +76,9 @@
         object-fit: scale-down;
     }
 }
+
+@media (prefers-reduced-motion) {
+    .image:hover {
+        transform: none;
+    }
+}

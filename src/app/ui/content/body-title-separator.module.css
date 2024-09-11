@@ -14,3 +14,10 @@
     opacity: 0;
     transform: translate(100%, 0%);
 }
+
+@media (prefers-reduced-motion) {
+    .preAnim {
+        opacity: 1;
+        transform: none;
+    }
+}
