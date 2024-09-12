@@ -8,7 +8,9 @@
     "dev": "concurrently \"pnpm run next-dev\" \"pnpm run flask-dev\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "cypress run",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.6.0",
@@ -36,6 +38,7 @@
     "vercel": "^35.2.0"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^10.0.2",
     "cypress": "^13.13.2"
   }
 }
