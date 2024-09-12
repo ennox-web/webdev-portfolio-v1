@@ -13,6 +13,7 @@
   }
   
   .mainpage {
+    height: 100%;
     padding: 0px 1.5rem;
     flex-grow: 1;
   
