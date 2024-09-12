@@ -80,6 +80,7 @@ export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: 
                     src={image.image} 
                     alt="test image"
                     className={styles.image}
+                    sizes="20vw"
                     fill={true}
                 />
             </div>

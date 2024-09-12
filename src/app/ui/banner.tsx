@@ -36,6 +36,7 @@ export default function Banner() {
 						alt="Header logo"
 						className={`${styles.logo} ${styles.fadeInLogo}`}
 						priority={true}
+						sizes="50vw"
 						fill
 					/>
 				</div>

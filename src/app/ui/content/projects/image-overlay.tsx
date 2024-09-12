@@ -56,6 +56,7 @@ export default function ImageOverlay({onClose, image}: {onClose: () => void, ima
                         className={styles.image}
                         fill={true}
                         style={style}
+                        sizes="100vw"
                         onMouseMove={OnMouseMove}
                     />
                 </div>
