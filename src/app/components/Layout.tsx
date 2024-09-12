@@ -1,4 +1,3 @@
-import SideNav from "../ui/obsolete/sidenav";
 import styles from './Layout.module.css';
 import { Inter } from "next/font/google";
 
@@ -8,12 +7,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     return (
         <>
             <div className={styles.mainbody}>
-                {/* <div>
-                    <div>
-                        <SideNav />
-                    </div>
-                </div> */}
-
                 <main className={styles.mainpage}>{children}</main>
             </div>
         </>
