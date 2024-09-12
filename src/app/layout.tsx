@@ -8,7 +8,7 @@ const montserrat = Montserrat({subsets: ["latin"]});
 
 export const metadata: Metadata = {
   title: "E.N. Nox",
-  description: "Emily Nox is an experienced full stack engineer",
+  description: "Emily Nox is an experienced software engineer who enjoys working the full stack from complex backends to responsive frontends.",
 };
 
 export const viewport: Viewport = {
