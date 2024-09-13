@@ -29,9 +29,18 @@ const projects: ProjectDataInterface[] = [
             ]
         },
         images: [
-            "/assets/projects/web-portfolio/WebPortfolio1.png",
-            "/assets/projects/web-portfolio/WebPortfolio2.png",
-            "/assets/projects/web-portfolio/WebPortfolio3.png",
+            {
+                src: "/assets/projects/web-portfolio/WebPortfolio1.png",
+                alt: "An image of this site's main banner, a starry sky with the E.N. Nox logo"
+            },
+            { 
+                src: "/assets/projects/web-portfolio/WebPortfolio2.png",
+                alt: "An image of this site's desktop version"
+            },
+            {
+                src: "/assets/projects/web-portfolio/WebPortfolio3.png",
+                alt: "An image of this site's mobile version"
+            }
         ]
     },
     {
@@ -67,7 +76,10 @@ const projects: ProjectDataInterface[] = [
             ]
         },
         images: [
-            "blank"
+            {
+                src: "blank",
+                alt: ""
+            }
         ]
     },
     {
@@ -88,7 +100,10 @@ const projects: ProjectDataInterface[] = [
             ]
         },
         images: [
-            "blank"
+            {
+                src: "blank",
+                alt: ""
+            }
         ]
     }
 ]
@@ -96,7 +111,7 @@ const projects: ProjectDataInterface[] = [
 export default function ProjectsSection() {
     return (
         <div className={styles.projectsContainer}>
-            <BodyTitleSeparator title="Projects" />
+            <BodyTitleSeparator title="Projects" dataCy='projects-title' />
             {
                 projects.map((project) => {
                     return (

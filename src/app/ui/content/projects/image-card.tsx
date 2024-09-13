@@ -4,15 +4,20 @@ import { MouseEvent, useEffect, useState } from "react";
 import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
 import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
+export interface ImageDataInterface {
+    src: string;
+    alt: string;
+}
+
 export class ImageDefinition {
-    image: string;
+    image: ImageDataInterface;
     styles: {"hover": any, "noHover": any} = {"hover": {}, "noHover": {}};
     index: number;
     default: string = "noHover";
 
-    constructor(imagePath: string, index: number) {
+    constructor(image: ImageDataInterface, index: number) {
         this.index = index;
-        this.image = imagePath;
+        this.image = image;
         this.recalculateStyles(index);
     }
 
@@ -43,30 +48,30 @@ export class ImageDefinition {
     }
 }
 
-export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: ImageDefinition, onClickShuffle: (image: ImageDefinition) => void, onClickOpen: (image: ImageDefinition) => void}) {
-    const [style, setStyle] = useState(image.styles.noHover);
+export default function ImageCard({imageDefinition, onClickShuffle, onClickOpen, dataCy}: {imageDefinition: ImageDefinition, onClickShuffle: (image: ImageDefinition) => void, onClickOpen: (image: ImageDefinition) => void, dataCy?: string}) {
+    const [style, setStyle] = useState(imageDefinition.styles.noHover);
     const [isReduced, setIsReduced] = useState(false);
 
     useEffect(() => {
         const checkReduced = window.matchMedia(`(prefers-reduced-motion: reduce)`).matches === true;
         setIsReduced(checkReduced);
-        setStyle(image.styles.noHover);
-    }, [image.styles.noHover]);
+        setStyle(imageDefinition.styles.noHover);
+    }, [imageDefinition.styles.noHover]);
 
     const onHover = () => {
-        if(!isReduced) setStyle(image.styles.hover);
+        if(!isReduced) setStyle(imageDefinition.styles.hover);
     }
 
     const onLeaveHover = () => {
-        setStyle(image.styles.noHover);
+        setStyle(imageDefinition.styles.noHover);
     }
 
     const onClickDefault = () => {
-        if(image.index == 0) onClickOpen(image);
-        else onClickShuffle(image);
+        if(imageDefinition.index == 0) onClickOpen(imageDefinition);
+        else onClickShuffle(imageDefinition);
     }
 
-    if(image.image != "blank") {
+    if(imageDefinition.image.src != "blank") {
         return (
             <CustomIntersectionObserver
                 thresholdValue={0}
@@ -78,11 +83,12 @@ export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: 
             >
                 <div className={styles.container}>
                     <Image 
-                        src={image.image}
-                        alt="test image"
+                        src={imageDefinition.image.src}
+                        alt={imageDefinition.image.alt}
                         className={styles.image}
                         sizes="20vw"
                         fill={true}
+                        data-cy={dataCy}
                     />
                 </div>
             </CustomIntersectionObserver>
