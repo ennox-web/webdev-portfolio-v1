@@ -17,6 +17,6 @@ describe('verify skills elements', () => {
 
         cy.get('[data-cy="skills-title-testauto"]').scrollIntoView();
         cy.get('[data-cy="skills-title-testauto"]').should('be.visible').and('have.text', "Test Automation");
-        cy.get('[data-cy="skills-testauto-chip"]').should('be.length', 5);
+        cy.get('[data-cy="skills-testauto-chip"]').should('be.length', 6);
     });
 })
