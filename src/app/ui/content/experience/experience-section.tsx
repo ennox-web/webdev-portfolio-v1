@@ -6,7 +6,7 @@ import { v4 as uuid } from 'uuid';
 const experienceData: ExperienceDataInterface[] = [
     {
         id: uuid(),
-        start: "Jan 2020",
+        start: "June 2020",
         end: "Feb 2024",
         company: "Sony Interactive Entertainment",
         title: "Software Engineer II",
@@ -43,7 +43,7 @@ const experienceData: ExperienceDataInterface[] = [
     {
         id: uuid(),
         start: "June 2018",
-        end: "Jan 2020",
+        end: "June 2020",
         company: "Sony Interactive Entertainment",
         title: "Backend Engineer",
         description: `Supported backend services for containerized web applications, tools, and automated tests as a backend engineer.`,
