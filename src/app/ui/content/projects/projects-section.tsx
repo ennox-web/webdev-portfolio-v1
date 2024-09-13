@@ -7,7 +7,7 @@ const projects: ProjectDataInterface[] = [
     {
         id: uuid(),
         name: "Web Portfolio v1",
-        description: "Next.js web application personal project for showcasing my work as a full stack engineer.",
+        description: "Next.js web application personal project for showcasing my work over my career. Designed in Figma - Deployed with Vercel.",
         skills: {
             "lang": [
                 "TypeScript",
@@ -37,7 +37,7 @@ const projects: ProjectDataInterface[] = [
     {
         id: uuid(),
         name: "T-Rex",
-        description: "Full-stack containerized web application for tracking and generating visual automated test reports. Due to this project being internal and unavailable to the public, all images are mock-ups with placeholder data.",
+        description: "Full-stack containerized web application for tracking and generating visual automated test reports. This project was internal and is unavailable to the public.",
         skills: {
             "lang": [
                 "Python",
