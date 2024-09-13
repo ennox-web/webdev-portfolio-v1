@@ -2,7 +2,7 @@ import CustomIntersectionObserver from "@/app/components/CustomIntersectionObser
 import styles from "./body-title-separator.module.css";
 import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
-export default function BodyTitleSeparator({title}: {title: string}) {
+export default function BodyTitleSeparator({title, dataCy}: {title: string, dataCy?: string}) {
     return (
         <CustomIntersectionObserver
             rootMargin="0px 0px 0px 400px"
@@ -11,7 +11,7 @@ export default function BodyTitleSeparator({title}: {title: string}) {
             useStyle={true}
             bottomIn={calcSlideLeftStyle(0)}
         >
-            <h3>{title}</h3>
+            <h3 data-cy={dataCy}>{title}</h3>
             <span className={styles.titleSeparator} />
         </CustomIntersectionObserver>
     )

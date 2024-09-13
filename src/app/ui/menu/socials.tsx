@@ -9,18 +9,21 @@ interface SocialInterface {
     name: string;
     icon: IconDefinition;
     href: string;
+    dataCy: string;
 }
 
 const socialLinks: SocialInterface[] = [
     {
         name: "LinkedIn",
         icon: faLinkedin,
-        href: "https://www.linkedin.com/in/ennox/"
+        href: "https://www.linkedin.com/in/ennox/",
+        dataCy: "socials-linkedin"
     },
     {
         name: "GitHub",
         icon: faGithub,
-        href: "https://github.com/ennox-web"
+        href: "https://github.com/ennox-web",
+        dataCy: "socials-github"
     }
 ]
 
@@ -30,6 +33,7 @@ function Social({link}: {link: SocialInterface}) {
             key={link.name}
             href={link.href}
             target="_blank"
+            data-cy={link.dataCy}
         >
             <FontAwesomeIcon className={styles.icon} icon={link.icon} />
         </Link>

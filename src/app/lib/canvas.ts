@@ -7,7 +7,6 @@ export default class Canvas {
 
     width: number = 0;
     height: number = 0;
-    scrollbarWidth: number = 17;
 
     constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas;
@@ -18,7 +17,6 @@ export default class Canvas {
     }
 
     resize() {
-        // this.width = window.innerWidth - this.scrollbarWidth;
         this.width = window.innerWidth;
         this.height = window.innerHeight;
         this.canvas.width = this.frame.width = this.width;

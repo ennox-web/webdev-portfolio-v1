@@ -9,7 +9,7 @@ export default function SkillChipList({type, skills}: {type: string, skills: str
                 skills.map((skill) => {
                     delayOrder += 1;
                     return (
-                        <SkillChip skill={skill} type={type} key={skill} delayOrder={delayOrder}/>
+                        <SkillChip skill={skill} type={type} key={skill} delayOrder={delayOrder} dataCy={`skills-${type}-chip`}/>
                     )
                 })
             }
