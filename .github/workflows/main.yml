@@ -1,13 +1,8 @@
 name: e2e
-
 on: push
-
 jobs:
   cypress-run:
     runs-on: ubuntu-22.04
-    container:
-      image: cypress/browsers:latest
-      options: --user 1001
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -15,6 +10,6 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           build: npm run build
-          start: npm run dev
+          start: npm start
           wait-on: 'http://localhost:3000'
           config-file: cypress/config/dev.config.ts
