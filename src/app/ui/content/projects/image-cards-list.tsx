@@ -2,8 +2,9 @@ import styles from './image-cards-list.module.css';
 import ImageCard, { ImageDefinition } from "./image-card"
 import { useState } from 'react';
 import ImageOverlay from './image-overlay';
+import { ImageDataInterface } from './image-card';
 
-export default function ImageCardsList({images}: {images: string[]}) {
+export default function ImageCardsList({images, dataCy}: {images: ImageDataInterface[], dataCy?: string}) {
     const imageDefinitions = images.map((image, index) => {
         return new ImageDefinition(image, index);
     })
@@ -35,13 +36,13 @@ export default function ImageCardsList({images}: {images: string[]}) {
             {
                 imageList.map((image) => {
                     return (
-                        <ImageCard image={image} onClickShuffle={onClickShuffle} onClickOpen={onClickOpen} key={image.image}  />
+                        <ImageCard imageDefinition={image} onClickShuffle={onClickShuffle} onClickOpen={onClickOpen} key={image.image.src} dataCy={dataCy} />
                     )
                 })
             }
             <div id="image-overlay-root">
                 { isOverlayOpen &&
-                    <ImageOverlay onClose={() => setIsOverlayOpen(false)} image={activeImage.image} />
+                    <ImageOverlay onClose={() => setIsOverlayOpen(false)} image={activeImage.image} dataCy="image-overlay" />
                 }
             </div>
         </div>

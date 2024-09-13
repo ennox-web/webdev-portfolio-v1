@@ -1,10 +1,10 @@
 import { createPortal } from 'react-dom';
 import styles from './image-overlay.module.css';
-import { ImageDefinition } from './image-card';
+import { ImageDataInterface, ImageDefinition } from './image-card';
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 
-export default function ImageOverlay({onClose, image}: {onClose: () => void, image: string}) {
+export default function ImageOverlay({onClose, image, dataCy}: {onClose: () => void, image: ImageDataInterface, dataCy?: string}) {
     const [style, setStyle] = useState({});
     const imageRef = useRef<HTMLImageElement>(null);
 
@@ -51,13 +51,14 @@ export default function ImageOverlay({onClose, image}: {onClose: () => void, ima
                 <div className={styles.imageContainer}>
                     <Image
                         ref={imageRef}
-                        src={image}
-                        alt="test image"
+                        src={image.src}
+                        alt={image.alt}
                         className={styles.image}
                         fill={true}
                         style={style}
                         sizes="100vw"
                         onMouseMove={OnMouseMove}
+                        data-cy={dataCy}
                     />
                 </div>
             </div>
