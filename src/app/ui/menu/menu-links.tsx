@@ -9,24 +9,29 @@ import { calcSlideUpStyle } from '@/app/lib/helpers';
 interface MenuItemInterface {
     name: string;
     section: string;
+    dataCy: string;
 }
 
 const links: MenuItemInterface[] = [
     {
         name: 'About',
-        section: 'about'
+        section: 'about',
+        dataCy: 'menu-link-about'
     },
     {
         name: 'Skills',
-        section: 'skills'
+        section: 'skills',
+        dataCy: 'menu-link-skills'
     },
     {
         name: 'Experience',
-        section: 'experience'
+        section: 'experience',
+        dataCy: 'menu-link-experience'
     },
     {
         name: 'Projects',
-        section: 'projects'
+        section: 'projects',
+        dataCy: 'menu-link-projects'
     }
 ]
 
@@ -47,6 +52,7 @@ function MenuLink({link, style}: {link: MenuItemInterface, style: any}) {
                 spy={true}
                 hashSpy={true}
                 className={styles.linkName}
+                data-cy={link.dataCy}
             >
                 <span className={styles.itemIndicator} />
                 <h4>{link.name}</h4>

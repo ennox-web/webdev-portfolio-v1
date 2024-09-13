@@ -10,7 +10,7 @@ import ProjectsSection from "./projects/projects-section"
 
 export default function MainBody() {
     return (
-        <div className={styles.mainBody} id="mainBody">
+        <div className={styles.mainBody} id="mainBody" data-cy="main-body-container">
             <Element id="about" name="about" className={styles.firstItem}>
                 <Summary />
             </Element>

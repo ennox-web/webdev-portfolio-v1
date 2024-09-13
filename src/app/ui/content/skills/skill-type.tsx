@@ -35,14 +35,15 @@ const skills: {[id: string]: string[]} = {
         "XUnit",
         "Jest",
         "Storybook",
-        "Cypress"
+        "Cypress",
+        "Selenium"
     ]
 }
 
 export default function SkillType({type, title}: {type: string, title: string}) {
     return (
         <div className={styles.skillTypeContainer}>
-            <BodyTitleSeparator title={title} />
+            <BodyTitleSeparator title={title} dataCy={`skills-title-${type}`} />
             <SkillChipList type={type} skills={skills[type]} />
         </div>
     )

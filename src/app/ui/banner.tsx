@@ -33,17 +33,18 @@ export default function Banner() {
 				<div className={styles.logoContainer}>
 					<Image
 						src="/assets/ENNoxTanResize.png"
-						alt="Header logo"
+						alt="E.N. Nox logo over a starry sky"
 						className={`${styles.logo} ${styles.fadeInLogo}`}
 						priority={true}
 						sizes="50vw"
 						fill
+						data-cy="banner-logo"
 					/>
 				</div>
 				
 				<div className={styles.canvasContainer}>
 					<div className={styles.glowEffect}></div>
-					<canvas ref={canvasRef} className={styles.stars}></canvas>
+					<canvas ref={canvasRef} className={styles.stars} data-cy="starry-canvas"></canvas>
 				</div>
 			</div>
 

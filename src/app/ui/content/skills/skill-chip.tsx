@@ -9,14 +9,14 @@ const chipStyles: {[id: string]: string} = {
     "testauto": styles.testautoChip,
 }
 
-export default function SkillChip({type, skill, delayOrder=0}: {type: string, skill: string, delayOrder?: number}) {
+export default function SkillChip({type, skill, delayOrder=0, dataCy}: {type: string, skill: string, delayOrder?: number, dataCy?: string}) {
     return (
         <CustomIntersectionObserver 
             classes={`${styles.chipContainer} ${styles.preAnim} ${chipStyles[type]}`}
             useStyle={true}
             bottomIn={calcSlideLeftStyle(delayOrder)}
         >
-            <span className={styles.chip}>{skill}</span>
+            <span className={styles.chip} data-cy={dataCy}>{skill}</span>
         </CustomIntersectionObserver>
     )
 }

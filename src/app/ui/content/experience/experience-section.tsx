@@ -43,72 +43,46 @@ const experienceData: ExperienceDataInterface[] = [
     {
         id: uuid(),
         start: "June 2018",
-        end: "Feb 2024",
+        end: "Jan 2020",
         company: "Sony Interactive Entertainment",
-        title: "Software Engineer II",
-        description: `Developed software systems, tools, and automated tests as a full-stack engineer. Spearheaded full-stack development of containerized web services. Collaborated with cross-discipline teams to design and implement features.`,
+        title: "Backend Engineer",
+        description: `Supported backend services for containerized web applications, tools, and automated tests as a backend engineer.`,
         skills: {
             "lang": [
-                "Python",
-                "TypeScript",
-                "JavaScript",
-                "HTML",
-                "CSS"
+                "Python"
             ],
             "tech": [
                 "Git",
-                "Angular",
                 "MongoDB",
                 "GraphQL",
-                "Figma",
-                "AWS"
             ],
             "devop": [
-                "Kubernetes",
-                "Docker",
                 "CI/CD"
             ],
             "testauto": [
                 "PyTest",
-                "Jest",
-                "Storybook",
-                "Cypress"
             ]
         }
     },
     {
         id: uuid(),
         start: "Feb 2016",
-        end: "Feb 2024",
+        end: "June 2018",
         company: "Sony Interactive Entertainment",
-        title: "Software Engineer II",
-        description: `Developed software systems, tools, and automated tests as a full-stack engineer. Spearheaded full-stack development of containerized web services. Collaborated with cross-discipline teams to design and implement features.`,
+        title: "Junior SDET",
+        description: `Developed automated tests and custom testing tools for communicating with PlayStation devkits.`,
         skills: {
             "lang": [
                 "Python",
-                "TypeScript",
-                "JavaScript",
-                "HTML",
-                "CSS"
+                "C#"
             ],
             "tech": [
-                "Git",
-                "Angular",
-                "MongoDB",
-                "GraphQL",
-                "Figma",
-                "AWS"
-            ],
-            "devop": [
-                "Kubernetes",
-                "Docker",
-                "CI/CD"
+                "Git"
             ],
             "testauto": [
                 "PyTest",
-                "Jest",
-                "Storybook",
-                "Cypress"
+                "XUnit",
+                "Selenium"
             ]
         }
     }
@@ -117,7 +91,7 @@ const experienceData: ExperienceDataInterface[] = [
 export default function ExperienceSection() {
     return (
         <div className={styles.experienceContainer}>
-            <BodyTitleSeparator title="Experience" />
+            <BodyTitleSeparator title="Experience" dataCy='experience-title' />
             {
                 experienceData.map((expData) => {
                     return (

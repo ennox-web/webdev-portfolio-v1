@@ -9,6 +9,10 @@
     transform: translate(100%, 0%);
 }
 
+.summary {
+    white-space: pre-wrap;
+}
+
 
 @media (prefers-reduced-motion) {
     .preAnim {

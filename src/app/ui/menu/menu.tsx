@@ -10,10 +10,8 @@ import { calcSlideUpStyle } from "@/app/lib/helpers";
 
 export default function Menu() {
     const name: string = "Emily Nox";
-    const position: string = "Full Stack Engineer";
-    const summary: string = `Summary of experience/tagline.
-
-We have always done things a little differently. Some would say the hard way, we would say the right way. The OLD FASHIONED line celebrates top quality ingredients and preparation by hand to create an all-natural* beef jerky like no other.`;
+    const position: string = "Software Engineer";
+    const summary: string = "Software engineer with 8 years of professional experience who enjoys working the full stack from complex backends to responsive frontends.";
 
     return (
         <div className={styles.menuContainer}>
@@ -23,21 +21,50 @@ We have always done things a little differently. Some would say the hard way, we
                     useStyle={true}
                     bottomIn={calcSlideUpStyle(0)}
                 >
-                    <h1>{name}</h1>
+                    <h1 data-cy="menu-full-name">{name}</h1>
                 </CustomIntersectionObserver>
-                <CustomIntersectionObserver 
-                    classes={styles.preAnim}
-                    useStyle={true}
-                    bottomIn={calcSlideUpStyle(1)}
-                > 
-                    <h3>{position}</h3>
-                </CustomIntersectionObserver>
+
+                <div className={styles.position}>
+                    <CustomIntersectionObserver 
+                        classes={`${styles.preAnim} ${styles.positionMain}`}
+                        useStyle={true}
+                        bottomIn={calcSlideUpStyle(1)}
+                    > 
+                        <h3 data-cy="menu-job-position">{position}</h3>
+                    </CustomIntersectionObserver>
+                    <div className={styles.positionSubContainer}>
+                        <div className={styles.positionSub}>
+                            <CustomIntersectionObserver 
+                                classes={`${styles.preAnim}`}
+                                useStyle={true}
+                                bottomIn={calcSlideUpStyle(1)}
+                            > 
+                                <h5 data-cy="menu-job-sub1">Frontend</h5>
+                            </CustomIntersectionObserver>
+                            <CustomIntersectionObserver 
+                                classes={`${styles.preAnim}`}
+                                useStyle={true}
+                                bottomIn={calcSlideUpStyle(1)}
+                            > 
+                                <h5 data-cy="menu-job-sub2">Backend</h5>
+                            </CustomIntersectionObserver>
+                        </div>
+                        <CustomIntersectionObserver 
+                            classes={`${styles.preAnim}`}
+                            useStyle={true}
+                            bottomIn={calcSlideUpStyle(1)}
+                        > 
+                            <h5 data-cy="menu-job-sub3">Full Stack</h5>
+                        </CustomIntersectionObserver>
+                    </div>
+                </div>
+
                 <CustomIntersectionObserver 
                     classes={styles.preAnim}
                     useStyle={true}
                     bottomIn={calcSlideUpStyle(2)}
                 >
-                    <p className={styles.summary}>{summary}</p>
+                    <p className={styles.summary} data-cy="menu-summary">{summary}</p>
                 </CustomIntersectionObserver>
 
                 <div className={styles.menuItems}>
@@ -47,7 +74,7 @@ We have always done things a little differently. Some would say the hard way, we
                 <CustomIntersectionObserver 
                     classes={`${styles.preAnim} ${styles.socials}`}
                     useStyle={true}
-                    bottomIn={calcSlideUpStyle(8)}
+                    bottomIn={calcSlideUpStyle(3)}
                 >
                     <Socials />
                 </CustomIntersectionObserver>

@@ -66,24 +66,40 @@ export default function ImageCard({image, onClickShuffle, onClickOpen}: {image: 
         else onClickShuffle(image);
     }
 
-    return (
-        <CustomIntersectionObserver
-            thresholdValue={0}
-            classes={`${styles.imageContainer} ${styles.preAnim}`}
-            useStyle={true}
-            useStyleWithReduced={true}
-            bottomIn={style}
-            onClick={onClickDefault} onMouseEnter={onHover} onMouseLeave={onLeaveHover}
-        >
-            <div className={styles.container}>
-                <Image 
-                    src={image.image} 
-                    alt="test image"
-                    className={styles.image}
-                    sizes="20vw"
-                    fill={true}
-                />
-            </div>
-        </CustomIntersectionObserver>
-    )
+    if(image.image != "blank") {
+        return (
+            <CustomIntersectionObserver
+                thresholdValue={0}
+                classes={`${styles.imageContainer} ${styles.preAnim}`}
+                useStyle={true}
+                useStyleWithReduced={true}
+                bottomIn={style}
+                onClick={onClickDefault} onMouseEnter={onHover} onMouseLeave={onLeaveHover}
+            >
+                <div className={styles.container}>
+                    <Image 
+                        src={image.image}
+                        alt="test image"
+                        className={styles.image}
+                        sizes="20vw"
+                        fill={true}
+                    />
+                </div>
+            </CustomIntersectionObserver>
+        )
+    }
+    else {
+        return (
+            <CustomIntersectionObserver
+                thresholdValue={0}
+                classes={`${styles.imageContainer} ${styles.preAnim}`}
+                useStyle={true}
+                useStyleWithReduced={true}
+                bottomIn={style}
+            >
+                <div className={styles.container}>
+                </div>
+            </CustomIntersectionObserver>
+        )
+    }
 }

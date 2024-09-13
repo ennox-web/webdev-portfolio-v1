@@ -6,11 +6,10 @@ import { v4 as uuid } from 'uuid';
 const projects: ProjectDataInterface[] = [
     {
         id: uuid(),
-        name: "T-Rex",
-        description: "Full-stack containerized web application for tracking and generating automated test reports.",
+        name: "Web Portfolio v1",
+        description: "Next.js web application personal project for showcasing my work over my career. Designed in Figma - Deployed with Vercel.",
         skills: {
             "lang": [
-                "Python",
                 "TypeScript",
                 "JavaScript",
                 "HTML",
@@ -18,34 +17,27 @@ const projects: ProjectDataInterface[] = [
             ],
             "tech": [
                 "Git",
-                "Angular",
-                "MongoDB",
-                "GraphQL",
-                "Figma",
-                "AWS"
+                "React",
+                "Next.js",
+                "Figma"
             ],
             "devop": [
-                "Kubernetes",
-                "Docker",
                 "CI/CD"
             ],
             "testauto": [
-                "PyTest",
-                "Jest",
-                "Storybook",
                 "Cypress"
             ]
         },
         images: [
-            "/assets/owil_energy.jpg",
-            "/assets/Nozaki2.jpg",
-            "/assets/Elias.PNG"
+            "/assets/projects/web-portfolio/WebPortfolio1.png",
+            "/assets/projects/web-portfolio/WebPortfolio2.png",
+            "/assets/projects/web-portfolio/WebPortfolio3.png",
         ]
     },
     {
         id: uuid(),
         name: "T-Rex",
-        description: "Full-stack containerized web application for tracking and generating automated test reports.",
+        description: "Full-stack containerized web application for tracking and generating visual automated test reports. This project was internal and is unavailable to the public.",
         skills: {
             "lang": [
                 "Python",
@@ -75,47 +67,28 @@ const projects: ProjectDataInterface[] = [
             ]
         },
         images: [
-            "/assets/owil_energy.jpg",
-            "/assets/Nozaki2.jpg",
-            "/assets/Elias.PNG"
+            "blank"
         ]
     },
     {
         id: uuid(),
-        name: "T-Rex",
-        description: "Full-stack containerized web application for tracking and generating automated test reports.",
+        name: "PlayStation Devkit Streaming Automated Tests",
+        description: "Custom tools and automated tests for communicating with PlayStation devkits and recording test data. Due to this project being internal and unavailable to the public, no images are available.",
         skills: {
             "lang": [
                 "Python",
-                "TypeScript",
-                "JavaScript",
-                "HTML",
-                "CSS"
+                "C#"
             ],
             "tech": [
-                "Git",
-                "Angular",
-                "MongoDB",
-                "GraphQL",
-                "Figma",
-                "AWS"
-            ],
-            "devop": [
-                "Kubernetes",
-                "Docker",
-                "CI/CD"
+                "Git"
             ],
             "testauto": [
                 "PyTest",
-                "Jest",
-                "Storybook",
-                "Cypress"
+                "Xunit"
             ]
         },
         images: [
-            "/assets/owil_energy.jpg",
-            "/assets/Nozaki2.jpg",
-            "/assets/Elias.PNG"
+            "blank"
         ]
     }
 ]
