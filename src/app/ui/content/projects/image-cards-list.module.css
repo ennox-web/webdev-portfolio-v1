@@ -1,4 +1,6 @@
 .imageListContainer {
     display: grid;
     padding-left: 8px;
+    padding-top: 50px;
+    align-self: flex-start;
 }

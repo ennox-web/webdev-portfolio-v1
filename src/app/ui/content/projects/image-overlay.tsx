@@ -6,10 +6,12 @@ import { useRef, useState } from 'react';
 
 export default function ImageOverlay({onClose, image, dataCy}: {onClose: () => void, image: ImageDataInterface, dataCy?: string}) {
     const [style, setStyle] = useState({});
+    const [className, setClassName] = useState(styles.image);
+    const [activateZoom, setActivateZoom] = useState(false);
     const imageRef = useRef<HTMLImageElement>(null);
 
     const OnMouseMove = (event: React.MouseEvent) => {
-        if(imageRef.current == null) return;
+        if(imageRef.current == null || !activateZoom) return;
 
         const imageRect = imageRef.current.getBoundingClientRect();
 
@@ -23,41 +25,28 @@ export default function ImageOverlay({onClose, image, dataCy}: {onClose: () => v
         setStyle(styleMove);
     }
 
-    // const OnTouchMove = (event: React.TouchEvent) => {
-    //     if(imageRef.current == null) return;
-
-    //     const imageRect = imageRef.current.getBoundingClientRect();
-
-    //     const xOrigin = ((event.touches[0].pageX - imageRect.left) /imageRect.width) * 100;
-    //     const yOrigin = ((event.touches[0].pageY - imageRect.top) / imageRect.height) * 100;
-
-    //     const styleMove = {
-    //         transformOrigin: `${xOrigin}% ${yOrigin}%`,
-    //         transform: "scale(2.4)"
-    //     }
-
-    //     setStyle(styleMove);
-    // }
-
-    // const OnTouchEnd = () => {
-    //     setStyle({
-    //         transform: "scale(1)"
-    //     });
-    // }
+    const OnClick = () => {
+        const activeZoom = !activateZoom
+        setActivateZoom(activeZoom);
+        if(activeZoom) setClassName(`${styles.image} ${styles.activateZoomIn}`);
+        else setClassName(styles.image)
+    }
 
     const overlayContent = (
-        <div className={styles.imageOverlayContainer} onClick={onClose}>
+        <div className={styles.imageOverlayContainer}>
+            <div className={styles.overlayBackground} onClick={onClose}/>
             <div className={styles.overlay}>
                 <div className={styles.imageContainer}>
                     <Image
                         ref={imageRef}
                         src={image.src}
                         alt={image.alt}
-                        className={styles.image}
+                        className={className}
                         fill={true}
                         style={style}
                         sizes="100vw"
                         onMouseMove={OnMouseMove}
+                        onClick={OnClick}
                         data-cy={dataCy}
                     />
                 </div>

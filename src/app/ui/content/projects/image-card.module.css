@@ -32,6 +32,13 @@
     position: relative;
 }
 
+.blankContainer {
+    width: 144px;
+    height: 102.4px;
+    grid-column: 1;
+    grid-row: 1;
+}
+
 @media (prefers-reduced-motion) {
     .preAnim {
         transition-property: none;

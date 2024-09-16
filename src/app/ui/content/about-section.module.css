@@ -21,6 +21,27 @@
     }
 }
 
+.embolden {
+    color: var(--text-link);
+    background: linear-gradient(90deg, red, orange, yellow, green, #037ffc, #883de3);
+    background-clip: text;
+    -webkit-background-clip: text;
+}
+
+.embolden:hover {
+    color: transparent;
+    transition: 500ms ease;
+}
+
+.links {
+    color: var(--text-menuInactive);
+    text-decoration: none;
+}
+
+.links:hover {
+    color: var(--text-link);
+}
+
 /* .anim {
     animation-duration: 0.6s;
     animation-name: slideIn;
