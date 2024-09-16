@@ -72,7 +72,7 @@ export default function Summary() {
                 topIn={calcSlideLeftStyle(1)}
                 bottomIn={calcSlideLeftStyle(1)}
             >
-                <span className={styles.summary} data-cy="about-summary3">
+                <span className={styles.summary} data-cy="about-summary4">
                     Want to learn more? Think I might be a good fit for your <b className={styles.embolden}>WebDev</b> opportunity?
                     I am currently seeking new employment and would love to hear from you! You can reach out to me via my <b className={styles.embolden}>
                         <Link
