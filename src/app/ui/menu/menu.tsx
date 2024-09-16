@@ -14,7 +14,7 @@ export default function Menu() {
     const summary: string = "Software engineer with 8 years of professional experience who enjoys working the full stack from complex backends to responsive frontends.";
 
     return (
-        <div className={styles.menuContainer}>
+        <div className={styles.menuContainer} data-cy="menu-container">
             <div className={styles.menu}>
                 <CustomIntersectionObserver 
                     classes={styles.preAnim}

@@ -96,16 +96,7 @@ export default function ImageCard({imageDefinition, onClickShuffle, onClickOpen,
     }
     else {
         return (
-            <CustomIntersectionObserver
-                thresholdValue={0}
-                classes={`${styles.imageContainer} ${styles.preAnim}`}
-                useStyle={true}
-                useStyleWithReduced={true}
-                bottomIn={style}
-            >
-                <div className={styles.container}>
-                </div>
-            </CustomIntersectionObserver>
+            <div className={styles.blankContainer} />
         )
     }
 }

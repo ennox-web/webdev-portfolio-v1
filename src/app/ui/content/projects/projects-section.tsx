@@ -46,7 +46,7 @@ const projects: ProjectDataInterface[] = [
     {
         id: uuid(),
         name: "T-Rex",
-        description: "Full-stack containerized web application for tracking and generating visual automated test reports. This project was internal and is unavailable to the public.",
+        description: "Full-stack containerized web application for tracking and generating visual automated test reports. This project was internal and is unavailable to the public. Rough mock-up images (drafted from memory) are available to provide an estimation of the work.",
         skills: {
             "lang": [
                 "Python",
@@ -77,8 +77,12 @@ const projects: ProjectDataInterface[] = [
         },
         images: [
             {
-                src: "blank",
-                alt: ""
+                src: "/assets/projects/t-rex/TRexMockup1.png",
+                alt: "A mockup of a test report dashboard on T-Rex."
+            },
+            {
+                src: "/assets/projects/t-rex/TRexMockup2.png",
+                alt: "A mockup of the Periodic Digest dashboard on T-Rex."
             }
         ]
     },

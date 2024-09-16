@@ -11,7 +11,7 @@ import ProjectsSection from "./projects/projects-section"
 export default function MainBody() {
     return (
         <div className={styles.mainBody} id="mainBody" data-cy="main-body-container">
-            <Element id="about" name="about" className={styles.firstItem}>
+            <Element id="about" name="about" className={`${styles.firstItem} ${styles.section}`}>
                 <Summary />
             </Element>
             <Element name="skills" className={styles.section}>
@@ -20,7 +20,7 @@ export default function MainBody() {
             <Element name="experience" className={styles.section}>
                 <ExperienceSection />
             </Element>
-            <Element name="projects" className={styles.section}>
+            <Element name="projects">
                 <ProjectsSection />
             </Element>
         </div>
