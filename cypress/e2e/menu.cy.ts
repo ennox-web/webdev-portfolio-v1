@@ -20,4 +20,15 @@ describe('verify menu elements', () => {
         cy.get('[data-cy="socials-linkedin"]').should('be.visible').and('have.attr', 'href', 'https://www.linkedin.com/in/ennox/' );
         cy.get('[data-cy="socials-github"]').should('be.visible').and('have.attr', 'href', 'https://github.com/ennox-web');
     });
+
+    it('verifies menu links', () => {
+        cy.get('[data-cy="menu-link-skills"]').click()
+        cy.get('[data-cy="skills-title-lang"]');
+
+        cy.get('[data-cy="menu-link-experience"]').click();
+        cy.get('[data-cy="experience-title"]').should('be.visible');
+
+        cy.get('[data-cy="menu-link-projects"]').click();
+        cy.get('[data-cy="projects-title"]').should('be.visible');
+    });
 });

@@ -8,6 +8,6 @@ describe('verify about elements', () => {
         cy.get('[data-cy="about-summary1"]').should('be.visible');
         cy.get('[data-cy="about-summary2"]').should('be.visible');
         cy.get('[data-cy="about-summary3"]').should('be.visible');
-        cy.get('[data-cy="about-summary4"]').should('be.visible');
+        cy.get('[data-cy="about-summary4"]').scrollIntoView().should('be.visible');
     });
 })

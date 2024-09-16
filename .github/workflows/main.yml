@@ -2,7 +2,7 @@ name: e2e
 on: push
 jobs:
   cypress-run:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -13,8 +13,8 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: '20'
-          cache: 'pnpm'
+          node-version: "20"
+          cache: "pnpm"
 
       - name: Install
         run: pnpm install
@@ -24,5 +24,5 @@ jobs:
         with:
           build: pnpm run build
           start: pnpm start
-          wait-on: 'http://localhost:3000'
+          wait-on: "http://localhost:3000"
           config-file: cypress/config/dev.config.ts
