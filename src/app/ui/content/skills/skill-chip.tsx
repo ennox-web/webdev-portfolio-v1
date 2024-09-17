@@ -12,6 +12,7 @@ const chipStyles: {[id: string]: string} = {
 export default function SkillChip({type, skill, delayOrder=0, dataCy}: {type: string, skill: string, delayOrder?: number, dataCy?: string}) {
     return (
         <CustomIntersectionObserver 
+            thresholdValue={0}
             classes={`${styles.chipContainer} ${styles.preAnim} ${chipStyles[type]}`}
             useStyle={true}
             bottomIn={calcSlideLeftStyle(delayOrder)}
