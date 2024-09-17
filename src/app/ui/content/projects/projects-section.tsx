@@ -8,6 +8,7 @@ const projects: ProjectDataInterface[] = [
         id: uuid(),
         name: "Web Portfolio v1",
         description: "Next.js web application personal project for showcasing my work over my career. Designed in Figma - Deployed with Vercel.",
+        end: "Sep 2024",
         skills: {
             "lang": [
                 "TypeScript",
@@ -47,6 +48,9 @@ const projects: ProjectDataInterface[] = [
         id: uuid(),
         name: "T-Rex",
         description: "Full-stack containerized web application for tracking and generating visual automated test reports. This project was internal and is unavailable to the public. Rough mock-up images (drafted from memory) are available to provide an estimation of the work.",
+        start: "June 2018",
+        end: "Feb 2024",
+        company: "Sony Interactive Entertainment",
         skills: {
             "lang": [
                 "Python",
@@ -90,6 +94,9 @@ const projects: ProjectDataInterface[] = [
         id: uuid(),
         name: "PlayStation Devkit Streaming Automated Tests",
         description: "Custom tools and automated tests for communicating with PlayStation devkits and recording test data. Due to this project being internal and unavailable to the public, no images are available.",
+        start: "Feb 2016",
+        end: "June 2018",
+        company: "Sony Interactive Entertainment",
         skills: {
             "lang": [
                 "Python",

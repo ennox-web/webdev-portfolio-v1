@@ -10,24 +10,48 @@ export interface ProjectDataInterface {
     id: string;
     name: string;
     description: string;
+    start?: string;
+    end: string;
+    company?: string;
     skills: {[id: string]: string[]};
     images: ImageDataInterface[];
 }
 
 export default function ProjectBlock({projData}: {projData: ProjectDataInterface}) {
+    const date = projData.start ? `${projData.start} — ${projData.end}` : projData.end;
     return (
         <div className={styles.projectBlockContainer}>
             <ImageCardsList images={projData.images} dataCy={`projects-${projData.name}-image`}/>
             <div className={styles.content}>
-                <CustomIntersectionObserver
-                    rootMargin="0px 0px 0px 400px"
-                    thresholdValue={0}
-                    classes={styles.preAnim}
-                    useStyle={true}
-                    bottomIn={calcSlideLeftStyle(0)}
-                >
-                    <h5 className={styles.header} data-cy={`projects-${projData.name}-title`}>{projData.name}</h5>
-                </CustomIntersectionObserver>
+                <div className={styles.header}>
+                    <CustomIntersectionObserver
+                        rootMargin="0px 0px 0px 400px"
+                        thresholdValue={0}
+                        classes={styles.preAnim}
+                        useStyle={true}
+                        bottomIn={calcSlideLeftStyle(0)}
+                    >
+                        <h5 className={styles.header} data-cy={`projects-${projData.name}-title`}>{projData.name}</h5>
+                    </CustomIntersectionObserver>
+                    <CustomIntersectionObserver
+                        rootMargin="0px 0px 0px 400px"
+                        thresholdValue={0}
+                        classes={styles.preAnim}
+                        useStyle={true}
+                        bottomIn={calcSlideLeftStyle(0)}
+                    >
+                        <span className={`${styles.company}`} data-cy={`${projData.name}-company`}>{projData.company}</span>
+                    </CustomIntersectionObserver>
+                    <CustomIntersectionObserver
+                        rootMargin="0px 0px 0px 400px"
+                        thresholdValue={0}
+                        classes={styles.preAnim}
+                        useStyle={true}
+                        bottomIn={calcSlideLeftStyle(0)}
+                    >
+                        <span className={`${styles.date}`} data-cy={`${projData.name}-dates`}>{date}</span>
+                    </CustomIntersectionObserver>
+                </div>
                 <CustomIntersectionObserver
                     rootMargin="0px 0px 0px 400px"
                     thresholdValue={0}
