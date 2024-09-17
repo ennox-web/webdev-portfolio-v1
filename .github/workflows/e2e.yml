@@ -1,5 +1,6 @@
 name: e2e
-on: push
+on: 
+  - push
 jobs:
   cypress-run:
     runs-on: ubuntu-latest
@@ -26,3 +27,6 @@ jobs:
           start: pnpm start
           wait-on: "http://localhost:3000"
           config-file: cypress/config/dev.config.ts
+  deploy-staging:
+    needs: cypress-run
+    uses: ./.github/workflows/deploy_staging.yml
