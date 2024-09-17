@@ -44,3 +44,9 @@
         transition-property: none;
     }
 }
+
+@container style(--is-mobile: true) {
+    .blankContainer {
+        display: none;
+    }
+}
