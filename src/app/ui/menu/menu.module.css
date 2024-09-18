@@ -49,7 +49,6 @@
 
 .menuItems {
     padding-top: 3rem;
-    padding-bottom: 3rem;
 }
 
 .socials {
@@ -67,7 +66,7 @@
     transform: translate(0%, 40%);
 }
 
-@container style(--is-mobile: true) {
+@media (max-width: 1024px) {
     .menuItems {
         display: none;
     }

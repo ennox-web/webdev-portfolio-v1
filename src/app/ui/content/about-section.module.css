@@ -28,18 +28,20 @@
     -webkit-background-clip: text;
 }
 
-.embolden:hover {
-    color: transparent;
-    transition: 500ms ease;
-}
-
 .links {
     color: var(--text-menuInactive);
     text-decoration: none;
 }
 
-.links:hover {
-    color: var(--text-link);
+@media (hover: hover) {
+    .embolden:hover {
+        color: transparent;
+        transition: 500ms ease;
+    }
+    
+    .links:hover {
+        color: var(--text-link);
+    }
 }
 
 /* .anim {

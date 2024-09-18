@@ -35,7 +35,7 @@
 
 }
 
-@container style(--is-mobile: true) {
+@media (max-width: 1024px) {
     .projectBlockContainer {
         display: grid;
         grid-template-columns: 1fr;

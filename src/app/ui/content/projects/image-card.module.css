@@ -16,9 +16,7 @@
     /* transition: transform 0.5s ease-in-out; */
 }
 
-.imageContainer:hover {
-    border-color: var(--text-link);
-}
+
 
 .preAnim {
     transition-property: transform, opacity;
@@ -45,8 +43,14 @@
     }
 }
 
-@container style(--is-mobile: true) {
+@media (max-width: 1024px) {
     .blankContainer {
         display: none;
+    }
+}
+
+@media (hover: hover) {
+    .imageContainer:hover {
+        border-color: var(--text-link);
     }
 }

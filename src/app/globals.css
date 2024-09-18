@@ -11,7 +11,7 @@
     "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
     "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: 0, 0, 0;
+
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 40, 42, 58;
 
@@ -51,7 +51,6 @@
   --safeInverseDarkAccent-hsl: 0, 0%, 100%; */
   /* --accent-hsl: 30.81081081, 40.2173913%, 63.92156863%; */
   /* --lightAccent-hsl: 60, 6.66666667%, 94.11764706%; */
-
   --scrollbar-width: 17px;
   --full-width: 100vw;
   --background-start: #282a3a;
@@ -71,16 +70,17 @@
   --text02: #A8A9B4;
 
   /* MEDIA QUERIES */
-  --is-mobile: false;
+  /* --is-mobile: false;
   --is-small-screen: false;
-
-  @media (max-width: 1024px) {
-    --is-mobile: true;
-  }
 
   @media (min-width: 1025px) and (max-width: 1400px) {
     --is-small-screen: true;
-  }
+  } */
+
+  /* @media (max-width: 1024px) {
+    --is-mobile: true;
+  } */
+
 }
 /*
 @media (prefers-color-scheme: dark) {
@@ -125,18 +125,14 @@ body {
 
 body {
   font-family: 'Montserrat', serif;
-  color: rgb(var(--foreground-rgb));
+  color: var(--text-menuActive);
   font-size: 16px;
   font-size: normal;
   font-weight: 400;
   line-height: 22px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
+
 
 /* font-size: clamp(0.5rem, 3.5vw, 10rem); 
 viewpoint

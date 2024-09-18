@@ -38,7 +38,7 @@
     top: 50%;
 }
 
-@container style(--is-mobile: true) {
+@media (max-width: 1024px) {
     .logoContainer {
         max-width: 30vw;
     }

@@ -8,16 +8,7 @@
     padding: 8px;
 }
 
-.expBlockContainer:hover {
-    background: var(--UI-BG1-Highlight);
-    border-radius: 20px;
-    border: 1px solid var(--text02);
-    box-shadow: 4px 4px 7.8px 4px rgba(0, 0, 0, 0.31);
-}
 
-.expBlockContainer:hover .header {
-    color: var(--text-link);
-}
 
 .expBlockContent {
     display: flex;
@@ -52,5 +43,18 @@
     .preAnim {
         opacity: 1;
         transform: none;
+    }
+}
+
+@media (hover: hover) {
+    .expBlockContainer:hover {
+        background: var(--UI-BG1-Highlight);
+        border-radius: 20px;
+        border: 1px solid var(--text02);
+        box-shadow: 4px 4px 7.8px 4px rgba(0, 0, 0, 0.31);
+    }
+    
+    .expBlockContainer:hover .header {
+        color: var(--text-link);
     }
 }

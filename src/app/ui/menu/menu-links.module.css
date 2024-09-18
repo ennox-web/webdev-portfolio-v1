@@ -39,21 +39,6 @@
     gap: 0.2rem;
 }
 
-.menulink:hover {
-    color: var(--text-link);
-    cursor: pointer;
-}
-
-.menulink:hover .itemIndicator {
-    width: 58px;
-    background: var(--text-link);
-}
-
-.menulink:hover .icon {
-    opacity: 1;
-    color: var(--text-link);
-}
-
 .icon {
     opacity: 0;
     transition: opacity 0.5s linear;
@@ -80,5 +65,23 @@
 
     .menulink:hover .itemIndicator {
         width: 34px;
+    }
+}
+
+@media (hover: hover) {
+
+    .menulink:hover {
+        color: var(--text-link);
+        cursor: pointer;
+    }
+    
+    .menulink:hover .itemIndicator {
+        width: 58px;
+        background: var(--text-link);
+    }
+    
+    .menulink:hover .icon {
+        opacity: 1;
+        color: var(--text-link);
     }
 }

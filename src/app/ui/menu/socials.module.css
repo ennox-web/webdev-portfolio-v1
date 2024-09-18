@@ -4,7 +4,8 @@
     color: var(--text02);
 }
 
-.icon:hover {
-    color: var(--text-link);
+@media (hover: hover) {
+    .icon:hover {
+        color: var(--text-link);
+    }
 }
-
