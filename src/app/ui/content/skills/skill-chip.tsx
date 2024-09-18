@@ -15,6 +15,7 @@ export default function SkillChip({type, skill, delayOrder=0, dataCy}: {type: st
             thresholdValue={0}
             classes={`${styles.chipContainer} ${styles.preAnim} ${chipStyles[type]}`}
             useStyle={true}
+            topIn={calcSlideLeftStyle(delayOrder)}
             bottomIn={calcSlideLeftStyle(delayOrder)}
         >
             <span className={styles.chip} data-cy={dataCy}>{skill}</span>
