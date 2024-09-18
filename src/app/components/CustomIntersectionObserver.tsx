@@ -5,7 +5,7 @@ import { useBoundaryObserver } from "../lib/scroll-in-view-helper";
 export default function CustomIntersectionObserver({ 
         children, 
         rootMargin = "0px", 
-        thresholdValue = 1, 
+        thresholdValue = 0, 
         classes,
         useStyle = false,
         useStyleWithReduced = false,
