@@ -68,6 +68,7 @@
   --text-menuActive: #F6F6F6;
   --text-menuInactive: #C9CFFE;
   --text02: #A8A9B4;
+  --main-min-height: 650px;
 
   /* MEDIA QUERIES */
   /* --is-mobile: false;
