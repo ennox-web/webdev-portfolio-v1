@@ -59,7 +59,7 @@ export default function Summary() {
                 <span className={styles.summary} data-cy="about-summary3">
                     I have since risen the ranks into web development, from <b className={styles.embolden}>Backend</b> to <b className={styles.embolden}>Frontend</b>, 
                     then <b className={styles.embolden}>Full Stack</b>. There I focused on building beautiful, robust features while maintaining 
-                    a <b className={styles.embolden}>CI/CD pipeline</b> through GitLab for a seamless red-green deployment strategy for an 
+                    a <b className={styles.embolden}>CI/CD pipeline</b> through GitLab for a seamless blue-green deployment strategy for an 
                     internal <b className={styles.embolden}>containerized web application</b> built to provide internal developers
                     a one-stop-shop for running, reporting, and tracking customized automated test performance metrics and statistics.
                 </span>
