@@ -1,6 +1,6 @@
 "use client"
 
-import { Element, scrollSpy } from "react-scroll"
+import { Element } from "react-scroll"
 import styles from "./main-body.module.css"
 import Summary from "./about-section"
 import SkillsSection from "./skills/skills-section"

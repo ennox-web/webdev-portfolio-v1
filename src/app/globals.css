@@ -58,11 +58,11 @@
   --UI-BG1-Radial: radial-gradient(50% 50% at 50% 50%, rgba(200, 169, 126, 0.22) 0%, rgba(40, 42, 58, 0.30) 85%);
   --UI-BG1-Basic: linear-gradient(180deg, #282a3a 0%, #393C55 100%);
   --UI-BG1-Accent:
-    var(--UI-BG1-Radial), 
+    var(--UI-BG1-Radial),
     linear-gradient(180deg, #282a3a 0%, #282A3A 24%, #282A3A 53%, #393C55 100%);
-  
+
   --UI-BG1-Highlight: #393C55;
-  
+
   /* TEXT */
   --text-link: #C8A97E;
   --text-menuActive: #F6F6F6;
@@ -133,9 +133,7 @@ body {
   line-height: 22px;
 }
 
-
-
-/* font-size: clamp(0.5rem, 3.5vw, 10rem); 
+/* font-size: clamp(0.5rem, 3.5vw, 10rem);
 viewpoint
 vh
 svh

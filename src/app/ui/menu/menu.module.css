@@ -14,6 +14,12 @@
     padding-right: 1.5rem;
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .position {
     /* display: grid;
     grid-template-columns: 1fr 1fr; */

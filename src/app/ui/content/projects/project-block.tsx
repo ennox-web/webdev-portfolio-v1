@@ -20,10 +20,10 @@ export interface ProjectDataInterface {
 export default function ProjectBlock({projData}: {projData: ProjectDataInterface}) {
     const date = projData.start ? `${projData.start} — ${projData.end}` : projData.end;
     return (
-        <div className={styles.projectBlockContainer}>
+        <section className={styles.projectBlockContainer}>
             <ImageCardsList images={projData.images} dataCy={`projects-${projData.name}-image`}/>
             <div className={styles.content}>
-                <div className={styles.header}>
+                <hgroup className={styles.header}>
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
                         thresholdValue={0}
@@ -40,7 +40,7 @@ export default function ProjectBlock({projData}: {projData: ProjectDataInterface
                         useStyle={true}
                         bottomIn={calcSlideLeftStyle(0)}
                     >
-                        <span className={`${styles.company}`} data-cy={`${projData.name}-company`}>{projData.company}</span>
+                        <p className={`${styles.company}`} data-cy={`${projData.name}-company`}>{projData.company}</p>
                     </CustomIntersectionObserver>
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
@@ -49,9 +49,9 @@ export default function ProjectBlock({projData}: {projData: ProjectDataInterface
                         useStyle={true}
                         bottomIn={calcSlideLeftStyle(0)}
                     >
-                        <span className={`${styles.date}`} data-cy={`${projData.name}-dates`}>{date}</span>
+                        <p className={`${styles.date}`} data-cy={`${projData.name}-dates`}>{date}</p>
                     </CustomIntersectionObserver>
-                </div>
+                </hgroup>
                 <CustomIntersectionObserver
                     rootMargin="0px 0px 0px 400px"
                     thresholdValue={0}
@@ -59,10 +59,10 @@ export default function ProjectBlock({projData}: {projData: ProjectDataInterface
                     useStyle={true}
                     bottomIn={calcSlideLeftStyle(1)}
                 >
-                    <span data-cy={`projects-${projData.name}-description`}>{projData.description}</span>
+                    <p data-cy={`projects-${projData.name}-description`}>{projData.description}</p>
                 </CustomIntersectionObserver>
                 <SkillChipLists skills={projData.skills} />
             </div>
-        </div>
+        </section>
     )
 }

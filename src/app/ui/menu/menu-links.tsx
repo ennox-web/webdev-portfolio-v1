@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import styles from './menu-links.module.css'
-import { Events, Link, scroller, scrollSpy } from 'react-scroll';
+import { Link } from 'react-scroll';
 import CustomIntersectionObserver from '@/app/components/CustomIntersectionObserver';
 import { calcSlideUpStyle } from '@/app/lib/helpers';
 
@@ -64,7 +64,7 @@ function MenuLink({link, style}: {link: MenuItemInterface, style: any}) {
 
 export default function MenuLinks({delayOrder}: {delayOrder: number}) {
     return (
-        <div className={styles.menuItems}>
+        <nav className={styles.menuItems}>
             {
                 links.map((link) => {
                     delayOrder += 1
@@ -73,6 +73,6 @@ export default function MenuLinks({delayOrder}: {delayOrder: number}) {
                     return MenuLink({link, style});
                 })
             }
-        </div>
+        </nav>
     )
 }

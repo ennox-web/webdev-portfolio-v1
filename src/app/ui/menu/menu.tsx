@@ -1,6 +1,5 @@
 "use client"
 
-import { Element } from "react-scroll";
 import MenuLinks from "./menu-links";
 import styles from "./menu.module.css";
 import Socials from "./socials";
@@ -16,50 +15,53 @@ export default function Menu() {
     return (
         <div className={styles.menuContainer} data-cy="menu-container">
             <div className={styles.menu}>
-                <CustomIntersectionObserver 
-                    classes={styles.preAnim}
-                    useStyle={true}
-                    bottomIn={calcSlideUpStyle(0)}
-                >
-                    <h1 data-cy="menu-full-name">{name}</h1>
-                </CustomIntersectionObserver>
-
-                <div className={styles.position}>
-                    <CustomIntersectionObserver 
-                        classes={`${styles.preAnim} ${styles.positionMain}`}
+                <hgroup className={styles.header}>
+                    <CustomIntersectionObserver
+                        classes={styles.preAnim}
                         useStyle={true}
-                        bottomIn={calcSlideUpStyle(1)}
-                    > 
-                        <h3 data-cy="menu-job-position">{position}</h3>
+                        bottomIn={calcSlideUpStyle(0)}
+                    >
+                        <h1 data-cy="menu-full-name">{name}</h1>
                     </CustomIntersectionObserver>
-                    <div className={styles.positionSubContainer}>
-                        <div className={styles.positionSub}>
-                            <CustomIntersectionObserver 
-                                classes={`${styles.preAnim}`}
-                                useStyle={true}
-                                bottomIn={calcSlideUpStyle(1)}
-                            > 
-                                <h5 data-cy="menu-job-sub1">Frontend</h5>
-                            </CustomIntersectionObserver>
-                            <CustomIntersectionObserver 
-                                classes={`${styles.preAnim}`}
-                                useStyle={true}
-                                bottomIn={calcSlideUpStyle(1)}
-                            > 
-                                <h5 data-cy="menu-job-sub2">Backend</h5>
-                            </CustomIntersectionObserver>
-                        </div>
-                        <CustomIntersectionObserver 
-                            classes={`${styles.preAnim}`}
+
+                    <div className={styles.position}>
+                        <CustomIntersectionObserver
+                            classes={`${styles.preAnim} ${styles.positionMain}`}
                             useStyle={true}
                             bottomIn={calcSlideUpStyle(1)}
-                        > 
-                            <h5 data-cy="menu-job-sub3">Full Stack</h5>
+                        >
+                            <h3 data-cy="menu-job-position">{position}</h3>
                         </CustomIntersectionObserver>
+                        <div className={styles.positionSubContainer}>
+                            <div className={styles.positionSub}>
+                                <CustomIntersectionObserver
+                                    classes={`${styles.preAnim}`}
+                                    useStyle={true}
+                                    bottomIn={calcSlideUpStyle(1)}
+                                >
+                                    <h5 data-cy="menu-job-sub1">Frontend</h5>
+                                </CustomIntersectionObserver>
+                                <CustomIntersectionObserver
+                                    classes={`${styles.preAnim}`}
+                                    useStyle={true}
+                                    bottomIn={calcSlideUpStyle(1)}
+                                >
+                                    <h5 data-cy="menu-job-sub2">Backend</h5>
+                                </CustomIntersectionObserver>
+                            </div>
+                            <CustomIntersectionObserver
+                                classes={`${styles.preAnim}`}
+                                useStyle={true}
+                                bottomIn={calcSlideUpStyle(1)}
+                            >
+                                <h5 data-cy="menu-job-sub3">Full Stack</h5>
+                            </CustomIntersectionObserver>
+                        </div>
                     </div>
-                </div>
+                </hgroup>
 
-                <CustomIntersectionObserver 
+
+                <CustomIntersectionObserver
                     classes={styles.preAnim}
                     useStyle={true}
                     bottomIn={calcSlideUpStyle(2)}
@@ -71,7 +73,7 @@ export default function Menu() {
                     <MenuLinks delayOrder={3} />
                 </div>
 
-                <CustomIntersectionObserver 
+                <CustomIntersectionObserver
                     classes={`${styles.preAnim} ${styles.socials}`}
                     useStyle={true}
                     bottomIn={calcSlideUpStyle(3)}

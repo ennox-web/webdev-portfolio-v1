@@ -90,7 +90,7 @@ const experienceData: ExperienceDataInterface[] = [
 
 export default function ExperienceSection() {
     return (
-        <div className={styles.experienceContainer}>
+        <article className={styles.experienceContainer}>
             <BodyTitleSeparator title="Experience" dataCy='experience-title' />
             {
                 experienceData.map((expData) => {
@@ -99,6 +99,6 @@ export default function ExperienceSection() {
                     );
                 })
             }
-        </div>
+        </article>
     )
 }

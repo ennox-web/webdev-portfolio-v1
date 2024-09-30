@@ -34,7 +34,7 @@ const projects: ProjectDataInterface[] = [
                 src: "/assets/projects/web-portfolio/WebPortfolio1.png",
                 alt: "An image of this site's main banner, a starry sky with the E.N. Nox logo"
             },
-            { 
+            {
                 src: "/assets/projects/web-portfolio/WebPortfolio2.png",
                 alt: "An image of this site's desktop version"
             },
@@ -121,7 +121,7 @@ const projects: ProjectDataInterface[] = [
 
 export default function ProjectsSection() {
     return (
-        <div className={styles.projectsContainer}>
+        <article className={styles.projectsContainer}>
             <BodyTitleSeparator title="Projects" dataCy='projects-title' />
             {
                 projects.map((project) => {
@@ -130,6 +130,6 @@ export default function ProjectsSection() {
                     )
                 })
             }
-        </div>
+        </article>
     )
 }

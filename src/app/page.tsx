@@ -7,8 +7,10 @@ import Footer from './components/footer';
 export default function Home() {
 
   return (
-    <main className={styles.main}>
-      <Banner />
+    <div className={styles.main}>
+      <header>
+        <Banner />
+      </header>
 
       <div className={styles.mainContentContainer}>
         <div className={styles.mainContent}>
@@ -22,6 +24,6 @@ export default function Home() {
         <Footer />
       </div>
 
-    </main>
+    </div>
   );
 }

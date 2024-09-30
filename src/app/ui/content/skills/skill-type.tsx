@@ -42,9 +42,9 @@ const skills: {[id: string]: string[]} = {
 
 export default function SkillType({type, title}: {type: string, title: string}) {
     return (
-        <div className={styles.skillTypeContainer}>
+        <section className={styles.skillTypeContainer}>
             <BodyTitleSeparator title={title} dataCy={`skills-title-${type}`} />
             <SkillChipList type={type} skills={skills[type]} />
-        </div>
+        </section>
     )
 }

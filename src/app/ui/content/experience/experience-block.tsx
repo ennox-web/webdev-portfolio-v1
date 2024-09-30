@@ -16,7 +16,7 @@ export interface ExperienceDataInterface {
 
 export default function ExperienceBlock({expData}: {expData: ExperienceDataInterface}) {
     return (
-        <div className={styles.expBlockContainer}>
+        <section className={styles.expBlockContainer}>
             <CustomIntersectionObserver
                 rootMargin="0px 0px 0px 400px"
                 thresholdValue={0}
@@ -60,6 +60,6 @@ export default function ExperienceBlock({expData}: {expData: ExperienceDataInter
                 </CustomIntersectionObserver>
                 <SkillChipLists skills={expData.skills} />
             </div>
-        </div>
+        </section>
     )
 }

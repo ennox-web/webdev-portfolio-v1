@@ -1,5 +1,3 @@
-import { Element, Link } from "react-scroll";
-import BodyTitleSeparator from "../body-title-separator";
 import SkillType from "./skill-type";
 import styles from "./skills-section.module.css";
 
@@ -29,7 +27,7 @@ const skillTypes: SkillTypeInterface[] = [
 
 export default function SkillsSection() {
     return (
-        <div className={styles.skillsContainer}>
+        <article className={styles.skillsContainer}>
             {
                 skillTypes.map((skillType) => {
                     return (
@@ -37,6 +35,6 @@ export default function SkillsSection() {
                     );
                 })
             }
-        </div>
+        </article>
     )
 }

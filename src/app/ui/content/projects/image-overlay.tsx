@@ -35,7 +35,7 @@ export default function ImageOverlay({onClose, image, dataCy}: {onClose: () => v
     const overlayContent = (
         <div className={styles.imageOverlayContainer}>
             <div className={styles.overlayBackground} onClick={onClose} data-cy="image-overlay-bg" />
-            <div className={styles.overlay}>
+            <div className={styles.imageOverlay}>
                 <div className={styles.imageContainer}>
                     <Image
                         ref={imageRef}
