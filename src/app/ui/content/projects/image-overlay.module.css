@@ -48,7 +48,7 @@
     border-radius: 20px;
     cursor: zoom-in;
     z-index: 21;
-
+    max-width: 100%;
 }
 
 .activateZoomIn {
@@ -56,7 +56,7 @@
     transform: scale(2.4);
 }
 
-.imageContainer {
+.imageButton {
     width: 60%;
     position: relative;
     padding: 0;
@@ -91,8 +91,8 @@
         background: none;
     }
 
-    .image {
-        object-fit: scale-down;
+    .imageContainer {
+        width: 100%;
     }
 }
 

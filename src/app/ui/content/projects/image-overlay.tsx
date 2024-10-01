@@ -53,7 +53,7 @@ export default function ImageOverlay({
       <div className={styles.imageOverlay}>
         <button
           type="button"
-          className={styles.imageContainer}
+          className={styles.imageButton}
           onClick={OnClick}
           aria-label="Zoom"
         >
