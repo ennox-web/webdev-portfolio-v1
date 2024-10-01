@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
     "cy:local": "cypress run --config-file cypress/config/dev.config.ts",
     "cy:staging": "cypress run --config-file cypress/config/staging.config.ts",
     "cy:prod": "cypress run --config-file cypress/config/prod.config.ts",
@@ -26,8 +26,6 @@
     "autoprefixer": "10.4.14",
     "clsx": "^2.1.1",
     "concurrently": "^8.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.5",
     "mongodb": "^6.8.0",
     "next": "14.2.5",
     "react": "^18",
@@ -39,6 +37,22 @@
   },
   "devDependencies": {
     "@testing-library/cypress": "^10.0.2",
-    "cypress": "^13.13.2"
+    "@typescript-eslint/parser": "^8.8.0",
+    "cypress": "^13.13.2",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-airbnb-typescript": "^18.0.0",
+    "eslint-config-next": "14.2.5",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "eslint-plugin-tailwindcss": "^3.17.4",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "^3.3.3",
+    "prettier-plugin-tailwindcss": "^0.6.8"
   }
 }
