@@ -1,9 +1,9 @@
-import { v4 as uuid } from "uuid"
+import { v4 as uuid } from "uuid";
 
-import BodyTitleSeparator from "../body-title-separator"
-import type { ProjectDataInterface } from "./project-block"
-import ProjectBlock from "./project-block"
-import styles from "./projects-section.module.css"
+import BodyTitleSeparator from "../body-title-separator";
+import type { ProjectDataInterface } from "./project-block";
+import ProjectBlock from "./project-block";
+import styles from "./projects-section.module.css";
 
 const projects: ProjectDataInterface[] = [
   {
@@ -78,15 +78,15 @@ const projects: ProjectDataInterface[] = [
       },
     ],
   },
-]
+];
 
 export default function ProjectsSection() {
   return (
     <article className={styles.projectsContainer}>
       <BodyTitleSeparator title="Projects" dataCy="projects-title" />
       {projects.map((project) => {
-        return <ProjectBlock projData={project} key={project.id} />
+        return <ProjectBlock projData={project} key={project.id} />;
       })}
     </article>
-  )
+  );
 }

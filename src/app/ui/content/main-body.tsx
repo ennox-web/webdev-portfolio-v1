@@ -1,12 +1,12 @@
-"use client"
+"use client";
 
-import { Element } from "react-scroll"
+import { Element } from "react-scroll";
 
-import Summary from "./about-section"
-import ExperienceSection from "./experience/experience-section"
-import styles from "./main-body.module.css"
-import ProjectsSection from "./projects/projects-section"
-import SkillsSection from "./skills/skills-section"
+import Summary from "./about-section";
+import ExperienceSection from "./experience/experience-section";
+import styles from "./main-body.module.css";
+import ProjectsSection from "./projects/projects-section";
+import SkillsSection from "./skills/skills-section";
 
 export default function MainBody() {
   return (
@@ -32,5 +32,5 @@ export default function MainBody() {
         <ProjectsSection />
       </Element>
     </div>
-  )
+  );
 }

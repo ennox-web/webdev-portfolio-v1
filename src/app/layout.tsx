@@ -1,11 +1,11 @@
-import "./globals.css"
+import "./globals.css";
 
-import type { Metadata, Viewport } from "next"
-import { Montserrat } from "next/font/google"
+import type { Metadata, Viewport } from "next";
+import { Montserrat } from "next/font/google";
 
-import Layout from "./components/Layout"
+import Layout from "./components/Layout";
 
-const montserrat = Montserrat({ subsets: ["latin"] })
+const montserrat = Montserrat({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "E.N. Nox",
@@ -30,17 +30,17 @@ export const metadata: Metadata = {
       url: "/apple-touch-icon.png",
     },
   ],
-}
+};
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-}
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
@@ -49,5 +49,5 @@ export default function RootLayout({
         <Layout> {children} </Layout>
       </body>
     </html>
-  )
+  );
 }

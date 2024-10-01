@@ -1,16 +1,16 @@
-"use client"
+"use client";
 
-import { Link } from "react-scroll"
+import { Link } from "react-scroll";
 
-import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver"
-import { calcSlideUpStyle } from "@/app/lib/helpers"
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideUpStyle } from "@/app/lib/helpers";
 
-import styles from "./menu-links.module.css"
+import styles from "./menu-links.module.css";
 
 interface MenuItemInterface {
-  name: string
-  section: string
-  dataCy: string
+  name: string;
+  section: string;
+  dataCy: string;
 }
 
 const links: MenuItemInterface[] = [
@@ -34,7 +34,7 @@ const links: MenuItemInterface[] = [
     section: "projects",
     dataCy: "menu-link-projects",
   },
-]
+];
 
 function MenuLink({ link, style }: { link: MenuItemInterface; style: any }) {
   return (
@@ -62,18 +62,18 @@ function MenuLink({ link, style }: { link: MenuItemInterface; style: any }) {
         </span>
       </Link>
     </CustomIntersectionObserver>
-  )
+  );
 }
 
 export default function MenuLinks({ delayOrder }: { delayOrder: number }) {
   return (
     <nav className={styles.menuItems}>
       {links.map((link) => {
-        delayOrder += 1
-        const style = calcSlideUpStyle(delayOrder)
+        delayOrder += 1;
+        const style = calcSlideUpStyle(delayOrder);
 
-        return MenuLink({ link, style })
+        return MenuLink({ link, style });
       })}
     </nav>
-  )
+  );
 }

@@ -1,42 +1,42 @@
-import { useState } from "react"
+import { useState } from "react";
 
-import type { ImageDataInterface } from "./image-card"
-import ImageCard, { ImageDefinition } from "./image-card"
-import styles from "./image-cards-list.module.css"
-import ImageOverlay from "./image-overlay"
+import type { ImageDataInterface } from "./image-card";
+import ImageCard, { ImageDefinition } from "./image-card";
+import styles from "./image-cards-list.module.css";
+import ImageOverlay from "./image-overlay";
 
 export default function ImageCardsList({
   images,
   dataCy,
 }: {
-  images: ImageDataInterface[]
-  dataCy?: string
+  images: ImageDataInterface[];
+  dataCy?: string;
 }) {
   const imageDefinitions = images.map((image, index) => {
-    return new ImageDefinition(image, index)
-  })
+    return new ImageDefinition(image, index);
+  });
 
-  const [imageList, setImageList] = useState(imageDefinitions)
-  const [isOverlayOpen, setIsOverlayOpen] = useState(false)
-  const [activeImage, setActiveImage] = useState(imageList[0])
+  const [imageList, setImageList] = useState(imageDefinitions);
+  const [isOverlayOpen, setIsOverlayOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(imageList[0]);
 
   const onClickShuffle = (image: ImageDefinition) => {
     if (image.index !== 0) {
-      const updateImageList = [...imageList]
-      const imageCard = updateImageList[image.index]
-      updateImageList.splice(image.index, 1)
-      updateImageList.unshift(imageCard)
+      const updateImageList = [...imageList];
+      const imageCard = updateImageList[image.index];
+      updateImageList.splice(image.index, 1);
+      updateImageList.unshift(imageCard);
       updateImageList.forEach((image, index) => {
-        image.recalculateStyles(index)
-      })
-      setImageList([...updateImageList])
+        image.recalculateStyles(index);
+      });
+      setImageList([...updateImageList]);
     }
-  }
+  };
 
   const onClickOpen = (image: ImageDefinition) => {
-    setActiveImage(image)
-    setIsOverlayOpen(true)
-  }
+    setActiveImage(image);
+    setIsOverlayOpen(true);
+  };
 
   return (
     <div className={styles.imageListContainer}>
@@ -49,7 +49,7 @@ export default function ImageCardsList({
             key={image.image.src}
             dataCy={dataCy}
           />
-        )
+        );
       })}
       <div id="image-overlay-root">
         {isOverlayOpen && (
@@ -61,5 +61,5 @@ export default function ImageCardsList({
         )}
       </div>
     </div>
-  )
+  );
 }

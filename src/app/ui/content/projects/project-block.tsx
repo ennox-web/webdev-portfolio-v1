@@ -1,30 +1,30 @@
-import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver"
-import { calcSlideLeftStyle } from "@/app/lib/helpers"
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
-import SkillChipLists from "../skills/skill-chip-lists"
-import type { ImageDataInterface } from "./image-card"
-import ImageCardsList from "./image-cards-list"
-import styles from "./project-block.module.css"
+import SkillChipLists from "../skills/skill-chip-lists";
+import type { ImageDataInterface } from "./image-card";
+import ImageCardsList from "./image-cards-list";
+import styles from "./project-block.module.css";
 
 export interface ProjectDataInterface {
-  id: string
-  name: string
-  description: string
-  start?: string
-  end: string
-  company?: string
-  skills: { [id: string]: string[] }
-  images: ImageDataInterface[]
+  id: string;
+  name: string;
+  description: string;
+  start?: string;
+  end: string;
+  company?: string;
+  skills: { [id: string]: string[] };
+  images: ImageDataInterface[];
 }
 
 export default function ProjectBlock({
   projData,
 }: {
-  projData: ProjectDataInterface
+  projData: ProjectDataInterface;
 }) {
   const date = projData.start
     ? `${projData.start} — ${projData.end}`
-    : projData.end
+    : projData.end;
   return (
     <section className={styles.projectBlockContainer}>
       <ImageCardsList
@@ -87,5 +87,5 @@ export default function ProjectBlock({
         <SkillChipLists skills={projData.skills} />
       </div>
     </section>
-  )
+  );
 }

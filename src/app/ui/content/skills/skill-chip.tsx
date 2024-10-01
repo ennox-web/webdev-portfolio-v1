@@ -1,14 +1,14 @@
-import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver"
-import { calcSlideLeftStyle } from "@/app/lib/helpers"
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
-import styles from "./skill-chip.module.css"
+import styles from "./skill-chip.module.css";
 
 const chipStyles: { [id: string]: string } = {
   lang: styles.languageChip,
   tech: styles.techChip,
   devop: styles.devopChip,
   testauto: styles.testautoChip,
-}
+};
 
 export default function SkillChip({
   type,
@@ -16,10 +16,10 @@ export default function SkillChip({
   delayOrder = 0,
   dataCy,
 }: {
-  type: string
-  skill: string
-  delayOrder?: number
-  dataCy?: string
+  type: string;
+  skill: string;
+  delayOrder?: number;
+  dataCy?: string;
 }) {
   return (
     <CustomIntersectionObserver
@@ -33,5 +33,5 @@ export default function SkillChip({
         {skill}
       </span>
     </CustomIntersectionObserver>
-  )
+  );
 }

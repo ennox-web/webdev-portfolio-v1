@@ -1,6 +1,6 @@
-import BodyTitleSeparator from "../body-title-separator"
-import SkillChipList from "./skill-chip-list"
-import styles from "./skill-type.module.css"
+import BodyTitleSeparator from "../body-title-separator";
+import SkillChipList from "./skill-chip-list";
+import styles from "./skill-type.module.css";
 
 const skills: { [id: string]: string[] } = {
   lang: ["C#", "Python", "JavaScript", "TypeScript", "HTML", "CSS"],
@@ -20,19 +20,19 @@ const skills: { [id: string]: string[] } = {
   ],
   devop: ["Kubernetes", "Docker", "CI/CD"],
   testauto: ["PyTest", "XUnit", "Jest", "Storybook", "Cypress", "Selenium"],
-}
+};
 
 export default function SkillType({
   type,
   title,
 }: {
-  type: string
-  title: string
+  type: string;
+  title: string;
 }) {
   return (
     <section className={styles.skillTypeContainer}>
       <BodyTitleSeparator title={title} dataCy={`skills-title-${type}`} />
       <SkillChipList type={type} skills={skills[type]} />
     </section>
-  )
+  );
 }

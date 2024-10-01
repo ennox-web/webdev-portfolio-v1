@@ -1,23 +1,23 @@
-import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver"
-import { calcSlideLeftStyle } from "@/app/lib/helpers"
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
-import SkillChipLists from "../skills/skill-chip-lists"
-import styles from "./experience-block.module.css"
+import SkillChipLists from "../skills/skill-chip-lists";
+import styles from "./experience-block.module.css";
 
 export interface ExperienceDataInterface {
-  id: string
-  start: string
-  end: string
-  company: string
-  title: string
-  description: string
-  skills: { [id: string]: string[] }
+  id: string;
+  start: string;
+  end: string;
+  company: string;
+  title: string;
+  description: string;
+  skills: { [id: string]: string[] };
 }
 
 export default function ExperienceBlock({
   expData,
 }: {
-  expData: ExperienceDataInterface
+  expData: ExperienceDataInterface;
 }) {
   return (
     <section className={styles.expBlockContainer}>
@@ -76,5 +76,5 @@ export default function ExperienceBlock({
         <SkillChipLists skills={expData.skills} />
       </div>
     </section>
-  )
+  );
 }

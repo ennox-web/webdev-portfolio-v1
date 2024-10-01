@@ -1,45 +1,45 @@
-import Image from "next/image"
-import { useRef, useState } from "react"
-import { createPortal } from "react-dom"
+import Image from "next/image";
+import { useRef, useState } from "react";
+import { createPortal } from "react-dom";
 
-import type { ImageDataInterface } from "./image-card"
-import styles from "./image-overlay.module.css"
+import type { ImageDataInterface } from "./image-card";
+import styles from "./image-overlay.module.css";
 
 export default function ImageOverlay({
   onClose,
   image,
   dataCy,
 }: {
-  onClose: () => void
-  image: ImageDataInterface
-  dataCy?: string
+  onClose: () => void;
+  image: ImageDataInterface;
+  dataCy?: string;
 }) {
-  const [style, setStyle] = useState({})
-  const [className, setClassName] = useState(styles.image)
-  const [activateZoom, setActivateZoom] = useState(false)
-  const imageRef = useRef<HTMLImageElement>(null)
+  const [style, setStyle] = useState({});
+  const [className, setClassName] = useState(styles.image);
+  const [activateZoom, setActivateZoom] = useState(false);
+  const imageRef = useRef<HTMLImageElement>(null);
 
   const OnMouseMove = (event: React.MouseEvent) => {
-    if (imageRef.current == null || !activateZoom) return
+    if (imageRef.current == null || !activateZoom) return;
 
-    const imageRect = imageRef.current.getBoundingClientRect()
+    const imageRect = imageRef.current.getBoundingClientRect();
 
-    const xOrigin = ((event.pageX - imageRect.left) / imageRect.width) * 100
-    const yOrigin = ((event.pageY - imageRect.top) / imageRect.height) * 100
+    const xOrigin = ((event.pageX - imageRect.left) / imageRect.width) * 100;
+    const yOrigin = ((event.pageY - imageRect.top) / imageRect.height) * 100;
 
     const styleMove = {
       transformOrigin: `${xOrigin}% ${yOrigin}%`,
-    }
+    };
 
-    setStyle(styleMove)
-  }
+    setStyle(styleMove);
+  };
 
   const OnClick = () => {
-    const activeZoom = !activateZoom
-    setActivateZoom(activeZoom)
-    if (activeZoom) setClassName(`${styles.image} ${styles.activateZoomIn}`)
-    else setClassName(styles.image)
-  }
+    const activeZoom = !activateZoom;
+    setActivateZoom(activeZoom);
+    if (activeZoom) setClassName(`${styles.image} ${styles.activateZoomIn}`);
+    else setClassName(styles.image);
+  };
 
   const overlayContent = (
     <div className={styles.imageOverlayContainer}>
@@ -74,6 +74,6 @@ export default function ImageOverlay({
         <h5 className={styles.notice}>Click anywhere blank to close.</h5>
       </div>
     </div>
-  )
-  return createPortal(overlayContent, document.body)
+  );
+  return createPortal(overlayContent, document.body);
 }

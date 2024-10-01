@@ -1,17 +1,17 @@
-"use client"
+"use client";
 
-import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver"
-import { calcSlideUpStyle } from "@/app/lib/helpers"
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideUpStyle } from "@/app/lib/helpers";
 
-import styles from "./menu.module.css"
-import MenuLinks from "./menu-links"
-import Socials from "./socials"
+import styles from "./menu.module.css";
+import MenuLinks from "./menu-links";
+import Socials from "./socials";
 
 export default function Menu() {
-  const name: string = "Emily Nox"
-  const position: string = "Software Engineer"
+  const name: string = "Emily Nox";
+  const position: string = "Software Engineer";
   const summary: string =
-    "Software engineer with 8 years of professional experience who enjoys working the full stack from complex backends to responsive frontends."
+    "Software engineer with 8 years of professional experience who enjoys working the full stack from complex backends to responsive frontends.";
 
   return (
     <div className={styles.menuContainer} data-cy="menu-container">
@@ -84,5 +84,5 @@ export default function Menu() {
         </CustomIntersectionObserver>
       </div>
     </div>
-  )
+  );
 }

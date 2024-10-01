@@ -1,9 +1,9 @@
-import SkillType from "./skill-type"
-import styles from "./skills-section.module.css"
+import SkillType from "./skill-type";
+import styles from "./skills-section.module.css";
 
 export interface SkillTypeInterface {
-  type: string
-  title: string
+  type: string;
+  title: string;
 }
 
 const skillTypes: SkillTypeInterface[] = [
@@ -23,7 +23,7 @@ const skillTypes: SkillTypeInterface[] = [
     type: "testauto",
     title: "Test Automation",
   },
-]
+];
 
 export default function SkillsSection() {
   return (
@@ -35,8 +35,8 @@ export default function SkillsSection() {
             title={skillType.title}
             key={skillType.type}
           />
-        )
+        );
       })}
     </article>
-  )
+  );
 }

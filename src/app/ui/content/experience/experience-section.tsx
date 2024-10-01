@@ -1,9 +1,9 @@
-import { v4 as uuid } from "uuid"
+import { v4 as uuid } from "uuid";
 
-import BodyTitleSeparator from "../body-title-separator"
-import type { ExperienceDataInterface } from "./experience-block"
-import ExperienceBlock from "./experience-block"
-import styles from "./experience-section.module.css"
+import BodyTitleSeparator from "../body-title-separator";
+import type { ExperienceDataInterface } from "./experience-block";
+import ExperienceBlock from "./experience-block";
+import styles from "./experience-section.module.css";
 
 const experienceData: ExperienceDataInterface[] = [
   {
@@ -47,15 +47,15 @@ const experienceData: ExperienceDataInterface[] = [
       testauto: ["PyTest", "XUnit", "Selenium"],
     },
   },
-]
+];
 
 export default function ExperienceSection() {
   return (
     <article className={styles.experienceContainer}>
       <BodyTitleSeparator title="Experience" dataCy="experience-title" />
       {experienceData.map((expData) => {
-        return <ExperienceBlock expData={expData} key={expData.id} />
+        return <ExperienceBlock expData={expData} key={expData.id} />;
       })}
     </article>
-  )
+  );
 }

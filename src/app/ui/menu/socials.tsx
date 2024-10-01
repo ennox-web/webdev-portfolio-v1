@@ -1,15 +1,15 @@
-import type { IconDefinition } from "@fortawesome/fontawesome-svg-core"
-import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Link from "next/link"
+import type { IconDefinition } from "@fortawesome/fontawesome-svg-core";
+import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Link from "next/link";
 
-import styles from "./socials.module.css"
+import styles from "./socials.module.css";
 
 interface SocialInterface {
-  name: string
-  icon: IconDefinition
-  href: string
-  dataCy: string
+  name: string;
+  icon: IconDefinition;
+  href: string;
+  dataCy: string;
 }
 
 const socialLinks: SocialInterface[] = [
@@ -25,7 +25,7 @@ const socialLinks: SocialInterface[] = [
     href: "https://github.com/ennox-web",
     dataCy: "socials-github",
   },
-]
+];
 
 function Social({ link }: { link: SocialInterface }) {
   return (
@@ -37,15 +37,15 @@ function Social({ link }: { link: SocialInterface }) {
     >
       <FontAwesomeIcon className={styles.icon} icon={link.icon} />
     </Link>
-  )
+  );
 }
 
 export default function Socials() {
   return (
     <>
       {socialLinks.map((link) => {
-        return Social({ link })
+        return Social({ link });
       })}
     </>
-  )
+  );
 }

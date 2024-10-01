@@ -1,8 +1,8 @@
-import Footer from "./components/footer"
-import styles from "./page.module.css"
-import Banner from "./ui/banner"
-import MainBody from "./ui/content/main-body"
-import Menu from "./ui/menu/menu"
+import Footer from "./components/footer";
+import styles from "./page.module.css";
+import Banner from "./ui/banner";
+import MainBody from "./ui/content/main-body";
+import Menu from "./ui/menu/menu";
 
 export default function Home() {
   return (
@@ -23,5 +23,5 @@ export default function Home() {
         <Footer />
       </div>
     </div>
-  )
+  );
 }

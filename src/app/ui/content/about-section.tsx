@@ -1,13 +1,13 @@
-import Link from "next/link"
+import Link from "next/link";
 
-import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver"
-import { calcSlideLeftStyle } from "@/app/lib/helpers"
+import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
+import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
-import styles from "./about-section.module.css"
-import BodyTitleSeparator from "./body-title-separator"
+import styles from "./about-section.module.css";
+import BodyTitleSeparator from "./body-title-separator";
 
 export default function Summary() {
-  const title: string = "About Me"
+  const title: string = "About Me";
   return (
     <article className={styles.summaryContainer}>
       <CustomIntersectionObserver
@@ -109,7 +109,7 @@ export default function Summary() {
         </p>
       </CustomIntersectionObserver>
     </article>
-  )
+  );
 }
 /*
 
