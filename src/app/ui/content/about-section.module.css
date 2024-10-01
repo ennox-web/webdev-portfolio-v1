@@ -10,9 +10,12 @@
 }
 
 .summary {
-    white-space: pre-wrap;
+    color: var(--text-menuActive);
+    font-size: 16px;
+    font-size: normal;
+    font-weight: 400;
+    line-height: 22px;
 }
-
 
 @media (prefers-reduced-motion) {
     .preAnim {
@@ -38,7 +41,7 @@
         color: transparent;
         transition: 500ms ease;
     }
-    
+
     .links:hover {
         color: var(--text-link);
     }

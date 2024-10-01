@@ -1,60 +1,79 @@
-import { createPortal } from 'react-dom';
-import styles from './image-overlay.module.css';
-import { ImageDataInterface, ImageDefinition } from './image-card';
-import Image from 'next/image';
-import { useRef, useState } from 'react';
+import Image from "next/image"
+import { useRef, useState } from "react"
+import { createPortal } from "react-dom"
 
-export default function ImageOverlay({onClose, image, dataCy}: {onClose: () => void, image: ImageDataInterface, dataCy?: string}) {
-    const [style, setStyle] = useState({});
-    const [className, setClassName] = useState(styles.image);
-    const [activateZoom, setActivateZoom] = useState(false);
-    const imageRef = useRef<HTMLImageElement>(null);
+import type { ImageDataInterface } from "./image-card"
+import styles from "./image-overlay.module.css"
 
-    const OnMouseMove = (event: React.MouseEvent) => {
-        if(imageRef.current == null || !activateZoom) return;
+export default function ImageOverlay({
+  onClose,
+  image,
+  dataCy,
+}: {
+  onClose: () => void
+  image: ImageDataInterface
+  dataCy?: string
+}) {
+  const [style, setStyle] = useState({})
+  const [className, setClassName] = useState(styles.image)
+  const [activateZoom, setActivateZoom] = useState(false)
+  const imageRef = useRef<HTMLImageElement>(null)
 
-        const imageRect = imageRef.current.getBoundingClientRect();
+  const OnMouseMove = (event: React.MouseEvent) => {
+    if (imageRef.current == null || !activateZoom) return
 
-        const xOrigin = ((event.pageX - imageRect.left) /imageRect.width) * 100;
-        const yOrigin = ((event.pageY - imageRect.top) / imageRect.height) * 100;
+    const imageRect = imageRef.current.getBoundingClientRect()
 
-        const styleMove = {
-            transformOrigin: `${xOrigin}% ${yOrigin}%`,
-        }
+    const xOrigin = ((event.pageX - imageRect.left) / imageRect.width) * 100
+    const yOrigin = ((event.pageY - imageRect.top) / imageRect.height) * 100
 
-        setStyle(styleMove);
+    const styleMove = {
+      transformOrigin: `${xOrigin}% ${yOrigin}%`,
     }
 
-    const OnClick = () => {
-        const activeZoom = !activateZoom
-        setActivateZoom(activeZoom);
-        if(activeZoom) setClassName(`${styles.image} ${styles.activateZoomIn}`);
-        else setClassName(styles.image)
-    }
+    setStyle(styleMove)
+  }
 
-    const overlayContent = (
-        <div className={styles.imageOverlayContainer}>
-            <div className={styles.overlayBackground} onClick={onClose} data-cy="image-overlay-bg" />
-            <div className={styles.overlay}>
-                <div className={styles.imageContainer}>
-                    <Image
-                        ref={imageRef}
-                        src={image.src}
-                        alt={image.alt}
-                        className={className}
-                        fill={true}
-                        style={style}
-                        sizes="100vw"
-                        onMouseMove={OnMouseMove}
-                        onClick={OnClick}
-                        data-cy={dataCy}
-                    />
-                </div>
-            </div>
-        </div>
-    )
-    return createPortal(
-        overlayContent,
-        document.body
-    );
+  const OnClick = () => {
+    const activeZoom = !activateZoom
+    setActivateZoom(activeZoom)
+    if (activeZoom) setClassName(`${styles.image} ${styles.activateZoomIn}`)
+    else setClassName(styles.image)
+  }
+
+  const overlayContent = (
+    <div className={styles.imageOverlayContainer}>
+      <button
+        className={styles.overlayBackground}
+        onClick={onClose}
+        data-cy="image-overlay-bg"
+        type="button"
+        aria-label="Close"
+      />
+      <div className={styles.imageOverlay}>
+        <button
+          type="button"
+          className={styles.imageButton}
+          onClick={OnClick}
+          aria-label="Zoom"
+        >
+          <Image
+            ref={imageRef}
+            src={image.src}
+            alt={image.alt}
+            className={className}
+            fill
+            style={style}
+            sizes="100vw"
+            onMouseMove={OnMouseMove}
+            data-cy={dataCy}
+          />
+        </button>
+      </div>
+      <div className={styles.noticeContainer}>
+        <h5 className={styles.notice}>Click anywhere blank to close.</h5>
+      </div>
+    </div>
+  )
+  return createPortal(overlayContent, document.body)
 }

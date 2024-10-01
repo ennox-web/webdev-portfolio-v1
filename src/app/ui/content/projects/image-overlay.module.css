@@ -1,7 +1,4 @@
 .imageOverlayContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     position: absolute;
     top: 0;
     left: 0;
@@ -15,13 +12,6 @@
     height: 100%;
     position: absolute;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 21;
-}
-
-.overlay {
-    width: 80%;
-    height: 80%;
-    z-index: 21;
 }
 
 .header {
@@ -53,8 +43,12 @@
     object-fit: contain;
     transition: transform 0.5s ease-out;
     transform: scale(1);
+    width: 100%;
+    height: auto !important;
     border-radius: 20px;
     cursor: zoom-in;
+    z-index: 21;
+    max-width: 100%;
 }
 
 .activateZoomIn {
@@ -62,12 +56,34 @@
     transform: scale(2.4);
 }
 
-.imageContainer {
+.imageButton {
+    width: 60%;
     position: relative;
-    overflow: clip;
-    height: 100%;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.imageOverlay {
+    display: grid;
+    grid-template: 1fr;
+    grid-template-rows: 1fr min-content;
+    place-items: center;
     width: 100%;
-    border-radius: 20px;
+    height: 25%;
+}
+
+.notice {
+    position: absolute;
+    bottom: 0;
+    z-index: 22;
+    margin-bottom: 1rem;
+}
+
+.noticeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 @media (max-width: 1024px) {
@@ -75,8 +91,8 @@
         background: none;
     }
 
-    .image {
-        object-fit: scale-down;
+    .imageContainer {
+        width: 100%;
     }
 }
 
