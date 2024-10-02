@@ -1,0 +1,23 @@
+name: Lint
+on:
+  - push
+jobs:
+  eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.6.0
+
+      - name: Install
+        run: pnpm install
+
+      - name: ESLint
+        run: pnpm eslint-only
+  e2e:
+    needs: eslint
+    uses: ./.github/workflows/e2e.yml
+    secrets: inherit
