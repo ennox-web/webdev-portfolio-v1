@@ -42,7 +42,7 @@ export default function ImageOverlay({
   };
 
   const overlayContent = (
-    <div className={styles.imageOverlayContainer}>
+    <section className={styles.imageOverlayContainer}>
       <button
         className={styles.overlayBackground}
         onClick={onClose}
@@ -73,7 +73,7 @@ export default function ImageOverlay({
       <div className={styles.noticeContainer}>
         <h5 className={styles.notice}>Click anywhere blank to close.</h5>
       </div>
-    </div>
+    </section>
   );
   return createPortal(overlayContent, document.body);
 }

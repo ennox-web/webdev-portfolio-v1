@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "eslint-only": "next lint --ignore-path .gitignore",
     "cy:local": "cypress run --config-file cypress/config/dev.config.ts",
     "cy:staging": "cypress run --config-file cypress/config/staging.config.ts",
     "cy:prod": "cypress run --config-file cypress/config/prod.config.ts",
