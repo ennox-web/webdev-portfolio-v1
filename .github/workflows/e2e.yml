@@ -27,8 +27,3 @@ jobs:
           start: pnpm start
           wait-on: "http://localhost:3000"
           config-file: cypress/config/dev.config.ts
-  deploy-staging:
-    needs: cypress-run
-    if: ${{ !contains(github.ref, 'main') }}
-    uses: ./.github/workflows/deploy_staging.yml
-    secrets: inherit
