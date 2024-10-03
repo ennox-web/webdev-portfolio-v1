@@ -1,6 +1,6 @@
 name: Lint
 on:
-  - push
+  workflow_call:
 jobs:
   eslint:
     runs-on: ubuntu-latest
@@ -17,7 +17,3 @@ jobs:
 
       - name: ESLint
         run: pnpm eslint-only
-  e2e:
-    needs: eslint
-    uses: ./.github/workflows/e2e.yml
-    secrets: inherit
