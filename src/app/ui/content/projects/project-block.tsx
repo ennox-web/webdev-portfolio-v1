@@ -6,6 +6,7 @@ import SkillChipLists from "../skills/skill-chip-lists";
 import type { ImageDataInterface } from "./image-card";
 import ImageCardsList from "./image-cards-list";
 import styles from "./project-block.module.css";
+import Contributions from "../contributions";
 
 export interface ProjectDataInterface {
   id: string;
@@ -16,6 +17,7 @@ export interface ProjectDataInterface {
   company?: string;
   github?: string;
   link?: string;
+  details?: string[];
   skills: { [id: string]: string[] };
   images: ImageDataInterface[];
 }
@@ -110,6 +112,9 @@ export default function ProjectBlock({
             {projData.description}
           </p>
         </CustomIntersectionObserver>
+        {projData.details && (
+          <Contributions contributionList={projData.details} />
+        )}
         <SkillChipLists skills={projData.skills} />
       </div>
     </section>

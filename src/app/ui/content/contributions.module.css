@@ -1,0 +1,16 @@
+.list {
+    list-style-type: none;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.icon {
+    font-size: 18px;
+    vertical-align: text-bottom;
+    color: var(--text-link);
+}
+
+.preAnim {
+    opacity: 0;
+    transform: translate(100%, 0%);
+}
