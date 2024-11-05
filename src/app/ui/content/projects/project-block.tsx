@@ -45,10 +45,7 @@ export default function ProjectBlock({
             useStyle
             bottomIn={calcSlideLeftStyle(0)}
           >
-            <h5
-              className={styles.title}
-              data-cy={`projects-${projData.name}-title`}
-            >
+            <h5 data-cy={`projects-${projData.name}-title`}>
               {projData.link ? (
                 <Link
                   href={projData.link}
