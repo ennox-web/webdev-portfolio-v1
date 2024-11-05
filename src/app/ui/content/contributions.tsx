@@ -19,7 +19,7 @@ export default function Contributions({
             topIn={calcSlideLeftStyle(1)}
             bottomIn={calcSlideLeftStyle(1)}
           >
-            <li className={styles.item}>
+            <li className={styles.item} key={contribution}>
               <span className={`material-symbols-outlined ${styles.icon}`}>
                 keyboard_arrow_right
               </span>
