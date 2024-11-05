@@ -5,7 +5,7 @@ import { Montserrat } from "next/font/google";
 
 import Layout from "./components/Layout";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   title: "E.N. Nox",
