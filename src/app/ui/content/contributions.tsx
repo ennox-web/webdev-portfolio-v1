@@ -10,6 +10,7 @@ export default function Contributions({
   return (
     <ul className={styles.list}>
       {contributionList.map((contribution) => {
+        const key = `${contribution}-icon`;
         return (
           <CustomIntersectionObserver
             rootMargin="0px 0px 0px 400px"
@@ -20,7 +21,10 @@ export default function Contributions({
             bottomIn={calcSlideLeftStyle(1)}
           >
             <li className={styles.item} key={contribution}>
-              <span className={`material-symbols-outlined ${styles.icon}`}>
+              <span
+                className={`material-symbols-outlined ${styles.icon}`}
+                key={key}
+              >
                 keyboard_arrow_right
               </span>
               {contribution}

@@ -71,9 +71,7 @@ export default function ExperienceBlock({
           topIn={calcSlideLeftStyle(3)}
           bottomIn={calcSlideLeftStyle(3)}
         >
-          <p data-cy={`${expData.title}-description`}>
-            {expData.description}
-          </p>
+          <p data-cy={`${expData.title}-description`}>{expData.description}</p>
         </CustomIntersectionObserver>
         {expData.contributions && (
           <Contributions contributionList={expData.contributions} />
