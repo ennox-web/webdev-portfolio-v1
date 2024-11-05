@@ -3,6 +3,7 @@ import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
 import SkillChipLists from "../skills/skill-chip-lists";
 import styles from "./experience-block.module.css";
+import Contributions from "../contributions";
 
 export interface ExperienceDataInterface {
   id: string;
@@ -11,6 +12,7 @@ export interface ExperienceDataInterface {
   company: string;
   title: string;
   description: string;
+  contributions?: string[];
   skills: { [id: string]: string[] };
 }
 
@@ -69,10 +71,11 @@ export default function ExperienceBlock({
           topIn={calcSlideLeftStyle(3)}
           bottomIn={calcSlideLeftStyle(3)}
         >
-          <span data-cy={`${expData.title}-description`}>
-            {expData.description}
-          </span>
+          <p data-cy={`${expData.title}-description`}>{expData.description}</p>
         </CustomIntersectionObserver>
+        {expData.contributions && (
+          <Contributions contributionList={expData.contributions} />
+        )}
         <SkillChipLists skills={expData.skills} />
       </div>
     </section>

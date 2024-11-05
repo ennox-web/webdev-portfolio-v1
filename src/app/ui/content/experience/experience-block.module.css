@@ -8,8 +8,6 @@
     padding: 8px;
 }
 
-
-
 .expBlockContent {
     display: flex;
     flex-direction: column;
@@ -53,7 +51,7 @@
         border: 1px solid var(--text02);
         box-shadow: 4px 4px 7.8px 4px rgba(0, 0, 0, 0.31);
     }
-    
+
     .expBlockContainer:hover .header {
         color: var(--text-link);
     }

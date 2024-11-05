@@ -12,7 +12,18 @@ const experienceData: ExperienceDataInterface[] = [
     end: "Feb 2024",
     company: "Sony Interactive Entertainment",
     title: "Software Engineer II",
-    description: `Developed software systems, tools, and automated tests as a full-stack engineer. Spearheaded full-stack development of containerized web services. Collaborated with cross-discipline teams to design and implement features.`,
+    description: `Developed software systems, tools, and automated tests as a full-stack engineer.`,
+    contributions: [
+      "Spearheaded full-stack development of containerized web services and tools.",
+      "Collaborated with cross-discipline teams to design and implement new features, ensuring testability and flexibility.",
+      "Researched technologies to provide modern solutions.",
+      "Deployed containerized live-services with Kubernetes and Docker.",
+      "Established CI/CD pipeline utilizing Gitlab with Helm.",
+      "Oversaw development of applications through full software development lifecycle.",
+      "Implemented end-to-end (e2e) integration tests, functional tests, and unit tests for backend and frontend services.",
+      "Championed code coverage with automated tests, increasing test coverage by 35% and ensuring stable releases.",
+      "Provided detailed documentation for technical and non-technical staff, including deployment guides.",
+    ],
     skills: {
       lang: ["Python", "TypeScript", "JavaScript", "HTML", "CSS"],
       tech: ["Git", "Angular", "MongoDB", "GraphQL", "Figma", "AWS"],
@@ -27,6 +38,11 @@ const experienceData: ExperienceDataInterface[] = [
     company: "Sony Interactive Entertainment",
     title: "Backend Engineer",
     description: `Supported backend services for containerized web applications, tools, and automated tests as a backend engineer.`,
+    contributions: [
+      "Collaborated with frontend engineers to design backend services.",
+      "Identified and resolved backend performance issues.",
+      "Deployed live-service containerized services with Kubernetes and Docker in CI/CD pipelines.",
+    ],
     skills: {
       lang: ["Python"],
       tech: ["Git", "MongoDB", "GraphQL"],
@@ -41,6 +57,12 @@ const experienceData: ExperienceDataInterface[] = [
     company: "Sony Interactive Entertainment",
     title: "Junior SDET",
     description: `Developed automated tests and custom testing tools for communicating with PlayStation devkits.`,
+    contributions: [
+      "Designed test plans for functional and end-to-end automated tests for live-service PlayStation Now streams.",
+      "Developed virtual controller to play test PlayStation streaming service features.",
+      "Proactively expanded tool sets to encompass new requirements and increase efficiency.",
+      "Caught regressions in stability and blocked issues from deploying to production environments, reducing player error rates by 30%.",
+    ],
     skills: {
       lang: ["Python", "C#"],
       tech: ["Git"],
