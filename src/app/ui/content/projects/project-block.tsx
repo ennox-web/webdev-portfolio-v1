@@ -1,5 +1,6 @@
 import CustomIntersectionObserver from "@/app/components/CustomIntersectionObserver";
 import { calcSlideLeftStyle } from "@/app/lib/helpers";
+import Link from "next/link";
 
 import SkillChipLists from "../skills/skill-chip-lists";
 import type { ImageDataInterface } from "./image-card";
@@ -10,9 +11,11 @@ export interface ProjectDataInterface {
   id: string;
   name: string;
   description: string;
-  start?: string;
+  start: string;
   end: string;
   company?: string;
+  github?: string;
+  link?: string;
   skills: { [id: string]: string[] };
   images: ImageDataInterface[];
 }
@@ -41,10 +44,33 @@ export default function ProjectBlock({
             bottomIn={calcSlideLeftStyle(0)}
           >
             <h5
-              className={styles.header}
+              className={styles.title}
               data-cy={`projects-${projData.name}-title`}
             >
-              {projData.name}
+              {projData.link ? (
+                <Link
+                  href={projData.link}
+                  target="_blank"
+                  data-cy="site-link"
+                  className={styles.link}
+                >
+                  {projData.name}
+                </Link>
+              ) : (
+                projData.name
+              )}
+              {projData.github && (
+                <Link
+                  href={projData.github}
+                  target="_blank"
+                  data-cy="github-link"
+                  className={styles.link}
+                >
+                  <span className={`material-symbols-outlined ${styles.icon}`}>
+                    open_in_new
+                  </span>
+                </Link>
+              )}
             </h5>
           </CustomIntersectionObserver>
           <CustomIntersectionObserver

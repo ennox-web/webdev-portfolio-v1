@@ -20,6 +20,13 @@
     flex-direction: column;
 }
 
+.title {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    max-height: 24px;
+}
+
 .date {
     flex: 1;
     text-transform: uppercase;
@@ -32,7 +39,20 @@
 .company {
     color: var(--text02);
     text-transform: uppercase;
+}
 
+.icon {
+    font-variation-settings: 'FILL' 0, 'wght' 350, 'opsz' 16;
+    font-size: 24px;
+}
+
+.link {
+    color: var(--text-menuActive);
+    text-decoration: none;
+}
+
+.link:hover {
+    color: var(--text-link);
 }
 
 @media (max-width: 1024px) {
