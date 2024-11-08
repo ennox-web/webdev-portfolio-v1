@@ -18,11 +18,9 @@ export interface ExperienceDataInterface {
 
 export default function ExperienceBlock({
     expData,
-    noSlide = false,
     searchSkill,
 }: {
     expData: ExperienceDataInterface;
-    noSlide?: boolean;
     searchSkill?: { [id: string]: string[] };
 }) {
     return (
@@ -30,7 +28,7 @@ export default function ExperienceBlock({
             <CustomIntersectionObserver
                 rootMargin="0px 0px 0px 400px"
                 thresholdValue={0}
-                classes={noSlide ? `` : styles.preAnim}
+                classes={searchSkill ? `` : styles.preAnim}
                 useStyle
                 topIn={calcSlideLeftStyle(0)}
                 bottomIn={calcSlideLeftStyle(0)}
@@ -47,22 +45,28 @@ export default function ExperienceBlock({
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
                         thresholdValue={0}
-                        classes={noSlide ? `` : styles.preAnim}
+                        classes={searchSkill ? `` : styles.preAnim}
                         useStyle
                         bottomIn={calcSlideLeftStyle(1)}
                     >
-                        <h5 className={styles.header} data-cy={`${expData.title}-company`}>
+                        <h5
+                            className={styles.header}
+                            data-cy={`${expData.title}-company`}
+                        >
                             {expData.company}
                         </h5>
                     </CustomIntersectionObserver>
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
                         thresholdValue={0}
-                        classes={noSlide ? `` : styles.preAnim}
+                        classes={searchSkill ? `` : styles.preAnim}
                         useStyle
                         bottomIn={calcSlideLeftStyle(2)}
                     >
-                        <span className={styles.title} data-cy={`${expData.title}-title`}>
+                        <span
+                            className={styles.title}
+                            data-cy={`${expData.title}-title`}
+                        >
                             {expData.title}
                         </span>
                     </CustomIntersectionObserver>
@@ -70,17 +74,25 @@ export default function ExperienceBlock({
                 <CustomIntersectionObserver
                     rootMargin="0px 0px 0px 400px"
                     thresholdValue={0}
-                    classes={noSlide ? `` : styles.preAnim}
+                    classes={searchSkill ? `` : styles.preAnim}
                     useStyle
                     topIn={calcSlideLeftStyle(3)}
                     bottomIn={calcSlideLeftStyle(3)}
                 >
-                    <p data-cy={`${expData.title}-description`}>{expData.description}</p>
+                    <p data-cy={`${expData.title}-description`}>
+                        {expData.description}
+                    </p>
                 </CustomIntersectionObserver>
                 {expData.contributions && (
-                    <Contributions contributionList={expData.contributions} />
+                    <Contributions
+                        contributionList={expData.contributions}
+                        noSlide={true}
+                    />
                 )}
-                <SkillChipLists skills={expData.skills} searchSkill={searchSkill} />
+                <SkillChipLists
+                    skills={expData.skills}
+                    searchSkill={searchSkill}
+                />
             </div>
         </section>
     );

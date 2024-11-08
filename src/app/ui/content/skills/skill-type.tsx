@@ -36,7 +36,11 @@ export default function SkillType({
     return (
         <section className={styles.skillTypeContainer}>
             <BodyTitleSeparator title={title} dataCy={`skills-title-${type}`} />
-            <SkillChipList type={type} skills={skills[type]} onClick={onClick} />
+            <SkillChipList
+                type={type}
+                skills={skills[type]}
+                onClick={onClick}
+            />
         </section>
     );
 }

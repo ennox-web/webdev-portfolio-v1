@@ -10,7 +10,6 @@ const chipStyles: { [id: string]: string } = {
     testauto: styles.testautoChip,
 };
 
-
 const chipStylesDisabled: { [id: string]: string } = {
     lang: styles.languageChipNoHover,
     tech: styles.techChipNoHover,
@@ -25,6 +24,7 @@ export default function SkillChip({
     delayOrder = 0,
     dataCy,
     disabled = false,
+    noSlide = false,
 }: {
     type: string;
     skill: string;
@@ -32,17 +32,19 @@ export default function SkillChip({
     delayOrder?: number;
     dataCy?: string;
     disabled?: boolean;
+    noSlide?: boolean;
 }) {
     const onClickDefault = () => {
-        if (onClick)
-            onClick(skill, type);
-    }
-    const chipStyle = disabled ? `${chipStylesDisabled[type]} ${styles.chipContainerNoHover}` : `${chipStyles[type]} ${styles.chipContainer}`;
+        if (onClick) onClick(skill, type);
+    };
+    const chipStyle = disabled
+        ? `${chipStylesDisabled[type]} ${styles.chipContainerNoHover}`
+        : `${chipStyles[type]} ${styles.chipContainer}`;
     return (
         <div>
             <CustomIntersectionObserver
                 thresholdValue={0}
-                classes={styles.preAnim}
+                classes={noSlide ? `` : `${styles.preAnim}`}
                 useStyle
                 topIn={calcSlideLeftStyle(delayOrder)}
                 bottomIn={calcSlideLeftStyle(delayOrder)}
@@ -56,7 +58,6 @@ export default function SkillChip({
                     {skill}
                 </button>
             </CustomIntersectionObserver>
-
         </div>
     );
 }

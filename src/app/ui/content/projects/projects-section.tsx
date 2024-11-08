@@ -125,12 +125,21 @@ const projectsData: ProjectDataInterface[] = [
     },
 ];
 
-export default function ProjectsSection({ searchSkill }: { searchSkill?: { [id: string]: string[] } }) {
+export default function ProjectsSection({
+    searchSkill,
+}: {
+    searchSkill?: { [id: string]: string[] };
+}) {
     var projects = projectsData;
     if (searchSkill) {
-        projects = projectsData.filter(proj => {
+        projects = projectsData.filter((proj) => {
             for (const skillType in searchSkill) {
-                if (proj.skills.hasOwnProperty(skillType) && proj.skills[skillType].some(skill => searchSkill[skillType].includes(skill)))
+                if (
+                    proj.skills.hasOwnProperty(skillType) &&
+                    proj.skills[skillType].some((skill) =>
+                        searchSkill[skillType].includes(skill),
+                    )
+                )
                     return proj;
             }
         });
@@ -139,7 +148,13 @@ export default function ProjectsSection({ searchSkill }: { searchSkill?: { [id: 
         <article className={styles.projectsContainer}>
             <BodyTitleSeparator title="Projects" dataCy="projects-title" />
             {projects.map((project) => {
-                return <ProjectBlock projData={project} key={project.id} />;
+                return (
+                    <ProjectBlock
+                        projData={project}
+                        key={project.id}
+                        searchSkill={searchSkill}
+                    />
+                );
             })}
         </article>
     );

@@ -25,7 +25,11 @@ const skillTypes: SkillTypeInterface[] = [
     },
 ];
 
-export default function SkillsSection({ onClick }: { onClick: (skill: string, type: string) => void }) {
+export default function SkillsSection({
+    onClick,
+}: {
+    onClick: (skill: string, type: string) => void;
+}) {
     return (
         <article className={styles.skillsContainer}>
             {skillTypes.map((skillType) => {
@@ -38,7 +42,6 @@ export default function SkillsSection({ onClick }: { onClick: (skill: string, ty
                     />
                 );
             })}
-
         </article>
     );
 }

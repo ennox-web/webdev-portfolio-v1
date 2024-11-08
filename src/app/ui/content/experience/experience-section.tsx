@@ -71,12 +71,21 @@ const experienceData: ExperienceDataInterface[] = [
     },
 ];
 
-export default function ExperienceSection({ searchSkill }: { searchSkill?: { [id: string]: string[] } }) {
+export default function ExperienceSection({
+    searchSkill,
+}: {
+    searchSkill?: { [id: string]: string[] };
+}) {
     var experience = experienceData;
     if (searchSkill) {
-        experience = experienceData.filter(exp => {
+        experience = experienceData.filter((exp) => {
             for (const skillType in searchSkill) {
-                if (exp.skills.hasOwnProperty(skillType) && exp.skills[skillType].some(skill => searchSkill[skillType].includes(skill)))
+                if (
+                    exp.skills.hasOwnProperty(skillType) &&
+                    exp.skills[skillType].some((skill) =>
+                        searchSkill[skillType].includes(skill),
+                    )
+                )
                     return exp;
             }
         });
@@ -85,7 +94,13 @@ export default function ExperienceSection({ searchSkill }: { searchSkill?: { [id
         <article className={styles.experienceContainer}>
             <BodyTitleSeparator title="Experience" dataCy="experience-title" />
             {experience.map((expData) => {
-                return <ExperienceBlock expData={expData} key={expData.id} searchSkill={searchSkill} />;
+                return (
+                    <ExperienceBlock
+                        expData={expData}
+                        key={expData.id}
+                        searchSkill={searchSkill}
+                    />
+                );
             })}
         </article>
     );

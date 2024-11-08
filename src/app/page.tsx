@@ -21,7 +21,7 @@ export default function Home() {
 
     const onCloseSkillOverlay = () => {
         setIsSkillOverlayOpen(false);
-    }
+    };
     return (
         <div className={styles.main}>
             <header>
@@ -38,7 +38,12 @@ export default function Home() {
                         {/* {isSkillOverlayOpen && (
                             <SkillOverlay skill={activeSkill} onClose={onCloseSkillOverlay} />
                         )} */}
-                        <SkillOverlay isOpen={isSkillOverlayOpen} skill={activeSkill} skillType={activeSkillType} onClose={onCloseSkillOverlay} />
+                        <SkillOverlay
+                            isOpen={isSkillOverlayOpen}
+                            skill={activeSkill}
+                            skillType={activeSkillType}
+                            onClose={onCloseSkillOverlay}
+                        />
                     </div>
                 </div>
                 <Footer />

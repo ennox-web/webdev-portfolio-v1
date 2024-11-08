@@ -1,4 +1,3 @@
-
 import { Element } from "react-scroll";
 
 import Summary from "./about-section";
@@ -7,7 +6,11 @@ import styles from "./main-body.module.css";
 import ProjectsSection from "./projects/projects-section";
 import SkillsSection from "./skills/skills-section";
 
-export default function MainBody({ onClickSkill }: { onClickSkill: (skill: string, type: string) => void }) {
+export default function MainBody({
+    onClickSkill,
+}: {
+    onClickSkill: (skill: string, type: string) => void;
+}) {
     return (
         <div
             className={styles.mainBody}
