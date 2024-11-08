@@ -1,0 +1,80 @@
+.overlay {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0%;
+    height: auto;
+    max-height: calc(90% - 4.5rem);
+    background: var(--UI-BG1-Highlight);
+    border-radius: 25px;
+    /* border: 3px solid var(--text-menuActive); */
+    z-index: 20;
+    margin: 4rem;
+    margin-right: 5rem;
+    transition: 1s ease-in-out;
+    padding-top: 2rem;
+    padding-right: 2.5rem;
+    padding-left: 2.5rem;
+    overflow-y: scroll;
+}
+
+.overlayBackground {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 19;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.closeOverlay {
+    max-width: 0;
+    opacity: 0;
+}
+
+.openOverlay {
+    max-width: 100%;
+    opacity: 100%;
+}
+
+.notice {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 2rem;
+    z-index: 22;
+
+}
+
+.noticeContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.noticeWrapper {
+    bottom: 0;
+}
+
+.closeButton {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: 8px;
+    margin-right: 8px;
+    border: none;
+    background: none;
+    color: var(--text-menuActive);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow-y: hidden;
+    gap: 15px;
+}
+
+.title {
+}
