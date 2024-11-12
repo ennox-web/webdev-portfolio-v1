@@ -26,7 +26,9 @@ export default function BodyTitleSeparator({
             bottomIn={calcSlideLeftStyle(0)}
         >
             {titleTag ? (
-                <Tag className={fadeTitle ? styles.faded : ``}>{title}</Tag>
+                <Tag data-cy={dataCy} className={fadeTitle ? styles.faded : ``}>
+                    {title}
+                </Tag>
             ) : (
                 <h3 data-cy={dataCy} className={fadeTitle ? styles.faded : ``}>
                     {title}
