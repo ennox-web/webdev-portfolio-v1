@@ -10,7 +10,7 @@ describe("verify scrolling reveals elements", () => {
             .scrollIntoView()
             .should("be.visible");
 
-        cy.get('[data-cy="Junior SDET-description"]').scrollIntoView();
+        cy.get('[data-cy="Junior SDET-dates"]').scrollIntoView();
         cy.get('[data-cy="Junior SDET-description"]').should("be.visible");
         cy.get('[data-cy="Junior SDET-dates"]').should("be.visible");
         cy.get('[data-cy="Junior SDET-company"]').should("be.visible");
