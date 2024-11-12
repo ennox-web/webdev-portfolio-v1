@@ -32,6 +32,7 @@
   height: 100%;
   padding: 4rem;
   width: 60%;
+  position: relative;
 }
 
 @media (max-width: 1024px) {
@@ -45,7 +46,7 @@
     height: 100%;
     background: var(--UI-BG1-Basic);
   }
-  
+
   .menu {
     width: var(--full-width);
     padding: 1rem;
@@ -67,7 +68,7 @@
   }
 }
 
-/* 
+/*
 /* Enable hover only on non-touch devices *
 @media (hover: hover) and (pointer: fine) {
   .card:hover {

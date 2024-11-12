@@ -3,7 +3,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 1rem;
-    border: 1px solid transparent;
+    /* border: 1px solid transparent; */
     border-radius: 20px;
     padding: 8px;
 }
@@ -44,12 +44,20 @@
     }
 }
 
+@media (max-width: 1400px) {
+    .expBlockContainer {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
 @media (hover: hover) {
     .expBlockContainer:hover {
         background: var(--UI-BG1-Highlight);
         border-radius: 20px;
-        border: 1px solid var(--text02);
-        box-shadow: 4px 4px 7.8px 4px rgba(0, 0, 0, 0.31);
+        /* border: 1px solid var(--text02); */
+        /* box-shadow: 4px 4px 7.8px 4px rgba(0, 0, 0, 0.31); */
     }
 
     .expBlockContainer:hover .header {

@@ -3,7 +3,7 @@ import { defineConfig } from "cypress";
 export default defineConfig({
     viewportWidth: 1200,
     e2e: {
-        baseUrl: 'http://localhost:3000'
+        baseUrl: "http://localhost:3000",
     },
     scrollBehavior: "top",
 

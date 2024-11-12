@@ -3,7 +3,7 @@
     height: 2rem;
     display: flex;
     align-items: center;
-    border: 1px solid var(--background-start);
+    border: 1px solid var(--background-start) !important;
 }
 
 .preAnim {
@@ -11,23 +11,27 @@
     transform: translate(100%, 0%);
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 .languageChip {
-    background: #877153;
+    background: #877153 !important;
     color: #FFFBF5;
 }
 
 .techChip {
-    background: #573862;
+    background: #573862 !important;
     color: #F5DAFF;
 }
 
 .devopChip {
-    background: #345F62;
+    background: #345F62 !important;
     color: #B1FBFF;
 }
 
 .testautoChip {
-    background: #31315C;
+    background: #31315C !important;
     color: #CCCCFF;
 }
 
@@ -35,6 +39,37 @@
     padding: 0 0.7rem;
     font-size: 16px;
     font-weight: 600;
+    background: none;
+    border: none;
+}
+
+.testautoChipNoHover {
+    color: #222269;
+    background: #9595F5 !important;
+}
+
+.devopChipNoHover {
+    color: #0B4549;
+    background: #64B5BB !important;
+}
+
+.techChipNoHover {
+    color: #482255;
+    background: #D889E9 !important;
+}
+
+.languageChipNoHover {
+    color: #523A19;
+    background: var(--text-link) !important;
+}
+
+.chipContainerNoHover {
+    border-radius: 100px;
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--text-menuActive) !important;
+    box-shadow: 0px 4px 4.5px 0px rgba(0, 0, 0, 0.6);
 }
 
 @media (prefers-reduced-motion) {
@@ -45,28 +80,33 @@
 }
 
 @media (hover: hover) {
+    .chip:hover {
+        background: none;
+        border: none;
+    }
+
     .testautoChip:hover {
         color: #222269;
-        background: #9595F5;
+        background: #9595F5 !important;
     }
 
     .devopChip:hover {
         color: #0B4549;
-        background: #64B5BB;
+        background: #64B5BB !important;
     }
 
     .techChip:hover {
         color: #482255;
-        background: #D889E9;
+        background: #D889E9 !important;
     }
 
     .languageChip:hover {
         color: #523A19;
-        background: var(--text-link);
+        background: var(--text-link) !important;
     }
 
     .chipContainer:hover {
-        border: 1px solid var(--text-menuActive);
+        border: 1px solid var(--text-menuActive) !important;
         box-shadow: 0px 4px 4.5px 0px rgba(0, 0, 0, 0.6);
     }
 }
