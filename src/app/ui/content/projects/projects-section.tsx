@@ -156,6 +156,7 @@ export default function ProjectsSection({
                     />
                 );
             })}
+            {projects.length === 0 && <h5>Nothing is here yet!</h5>}
         </article>
     );
 }

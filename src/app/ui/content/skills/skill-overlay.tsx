@@ -59,8 +59,13 @@ export default function SkillOverlay({
                 </button>
                 <div className={styles.content}>
                     <SkillChip type={skillType} skill={skill} disabled={true} />
-                    <ExperienceSection searchSkill={check} />
-                    <ProjectsSection searchSkill={check} />
+                    <div className={styles.sections}>
+                        <ExperienceSection searchSkill={check} />
+                    </div>
+
+                    <div className={styles.sections}>
+                        <ProjectsSection searchSkill={check} />
+                    </div>
                 </div>
             </section>
         </div>

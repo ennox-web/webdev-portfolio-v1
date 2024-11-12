@@ -103,6 +103,7 @@ export default function ExperienceSection({
                     />
                 );
             })}
+            {experience.length === 0 && <h5>Nothing is here yet!</h5>}
         </article>
     );
 }

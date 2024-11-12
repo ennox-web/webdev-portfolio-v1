@@ -2,8 +2,8 @@
     position: absolute;
     display: block;
     top: 0;
-    right: 0%;
-    height: auto;
+    right: 0;
+    height: 100%;
     max-height: calc(90% - 4.5rem);
     background: var(--UI-BG1-Highlight);
     border-radius: 25px;
@@ -17,6 +17,7 @@
     padding-left: 2.5rem;
     overflow-y: scroll;
     overflow-x: hidden;
+    width: calc(100% - 9rem);
 }
 
 .overlayBackground {
@@ -77,12 +78,17 @@
     gap: 15px;
 }
 
+.sections {
+    align-self: flex-start;
+}
+
 @media(max-width: 1024px) {
     .overlay {
         max-height: 90vh;
         position: fixed;
         top: 0;
         margin: 2rem;
+        width: auto;
     }
 
     .notice {
