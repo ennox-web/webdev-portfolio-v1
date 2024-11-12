@@ -74,9 +74,7 @@ export default function ImageOverlay({
                 </button>
             </div>
             <div className={styles.noticeContainer}>
-                <h5 className={styles.notice}>
-                    Click anywhere blank to close
-                </h5>
+                <h5 className={styles.notice}>Click anywhere blank to close</h5>
             </div>
         </section>
     );
