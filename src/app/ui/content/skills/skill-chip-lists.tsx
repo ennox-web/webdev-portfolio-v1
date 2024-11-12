@@ -44,7 +44,6 @@ export default function SkillChipLists({
                     searchSkill && skillType in searchSkill
                         ? searchSkill[skillType]
                         : undefined;
-                console.log(search);
                 return (
                     <React.Fragment key={skillType}>
                         {ChipList({

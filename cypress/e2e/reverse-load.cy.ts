@@ -6,7 +6,14 @@ describe("verify scrolling reveals elements", () => {
 
     it("loads elements when scrolling from bottom", () => {
         cy.get('[data-cy="projects-title"]')
+            .first()
             .scrollIntoView()
             .should("be.visible");
+
+        cy.get('[data-cy="Junior SDET-description"]').scrollIntoView();
+        cy.get('[data-cy="Junior SDET-description"]').should("be.visible");
+        cy.get('[data-cy="Junior SDET-dates"]').should("be.visible");
+        cy.get('[data-cy="Junior SDET-company"]').should("be.visible");
+        cy.get('[data-cy="Junior SDET-title"]').should("be.visible");
     });
 });

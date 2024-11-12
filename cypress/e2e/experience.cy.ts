@@ -6,6 +6,7 @@ describe("verify experience elements", () => {
 
     it("loads experience section elements", () => {
         cy.get('[data-cy="experience-title"]')
+            .first()
             .should("be.visible")
             .and("have.text", "Experience");
         cy.get('[data-cy="Software Engineer II-dates"]').should("be.visible");

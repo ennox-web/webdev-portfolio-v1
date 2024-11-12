@@ -6,7 +6,7 @@ import SkillChipLists from "../skills/skill-chip-lists";
 import type { ImageDataInterface } from "./image-card";
 import ImageCardsList from "./image-cards-list";
 import styles from "./project-block.module.css";
-import Contributions from "../contributions";
+import Contributions from "../../../components/contributions";
 
 export interface ProjectDataInterface {
     id: string;
@@ -43,7 +43,7 @@ export default function ProjectBlock({
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
                         thresholdValue={0}
-                        classes={styles.preAnim}
+                        classes={searchSkill ? `` : `${styles.preAnim}`}
                         useStyle
                         bottomIn={calcSlideLeftStyle(0)}
                     >
@@ -79,7 +79,7 @@ export default function ProjectBlock({
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
                         thresholdValue={0}
-                        classes={styles.preAnim}
+                        classes={searchSkill ? `` : `${styles.preAnim}`}
                         useStyle
                         bottomIn={calcSlideLeftStyle(0)}
                     >
@@ -93,7 +93,7 @@ export default function ProjectBlock({
                     <CustomIntersectionObserver
                         rootMargin="0px 0px 0px 400px"
                         thresholdValue={0}
-                        classes={styles.preAnim}
+                        classes={searchSkill ? `` : `${styles.preAnim}`}
                         useStyle
                         bottomIn={calcSlideLeftStyle(0)}
                     >
@@ -108,7 +108,7 @@ export default function ProjectBlock({
                 <CustomIntersectionObserver
                     rootMargin="0px 0px 0px 400px"
                     thresholdValue={0}
-                    classes={styles.preAnim}
+                    classes={searchSkill ? `` : `${styles.preAnim}`}
                     useStyle
                     bottomIn={calcSlideLeftStyle(1)}
                 >
@@ -117,7 +117,10 @@ export default function ProjectBlock({
                     </p>
                 </CustomIntersectionObserver>
                 {projData.details && (
-                    <Contributions contributionList={projData.details} />
+                    <Contributions
+                        contributionList={projData.details}
+                        noSlide={searchSkill ? true : false}
+                    />
                 )}
                 <SkillChipLists
                     skills={projData.skills}

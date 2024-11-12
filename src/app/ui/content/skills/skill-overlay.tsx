@@ -23,14 +23,14 @@ export default function SkillOverlay({
                     <button
                         className={styles.overlayBackground}
                         onClick={onClose}
-                        data-cy="image-overlay-bg"
+                        data-cy="skill-overlay-bg"
                         type="button"
                         aria-label="Close"
                     />
                     <div className={styles.noticeWrapper}>
                         <div className={styles.noticeContainer}>
                             <h5 className={styles.notice}>
-                                Click anywhere blank to close.
+                                Click anywhere blank to close
                             </h5>
                         </div>
                     </div>
@@ -42,8 +42,15 @@ export default function SkillOverlay({
                         ? `${styles.openOverlay} ${styles.overlay}`
                         : `${styles.closeOverlay} ${styles.overlay}`
                 }
+                data-cy="skill-overlay"
             >
-                <button className={styles.closeButton} onClick={onClose}>
+                <button
+                    className={styles.closeButton}
+                    onClick={onClose}
+                    data-cy="skill-overlay-close-button"
+                    type="button"
+                    aria-label="Close"
+                >
                     <span
                         className={`material-symbols-outlined ${styles.icon}`}
                     >

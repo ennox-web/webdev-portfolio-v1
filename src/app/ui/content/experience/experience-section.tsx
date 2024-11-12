@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-import BodyTitleSeparator from "../body-title-separator";
+import BodyTitleSeparator from "../../../components/body-title-separator";
 import type { ExperienceDataInterface } from "./experience-block";
 import ExperienceBlock from "./experience-block";
 import styles from "./experience-section.module.css";
@@ -90,6 +90,7 @@ export default function ExperienceSection({
             }
         });
     }
+
     return (
         <article className={styles.experienceContainer}>
             <BodyTitleSeparator title="Experience" dataCy="experience-title" />

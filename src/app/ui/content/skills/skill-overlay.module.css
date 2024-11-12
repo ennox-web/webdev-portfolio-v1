@@ -16,6 +16,7 @@
     padding-right: 2.5rem;
     padding-left: 2.5rem;
     overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .overlayBackground {
@@ -44,7 +45,6 @@
     bottom: 0;
     margin-bottom: 2rem;
     z-index: 22;
-
 }
 
 .noticeContainer {
@@ -58,9 +58,9 @@
 }
 
 .closeButton {
-    position: absolute;
+    position: sticky;
+    float: right;
     top: 0;
-    right: 0;
     margin-top: 8px;
     margin-right: 8px;
     border: none;
@@ -74,9 +74,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    overflow-y: hidden;
     gap: 15px;
 }
 
-.title {
+@media(max-width: 1024px) {
+    .overlay {
+        max-height: 90vh;
+        position: fixed;
+        top: 0;
+        margin: 2rem;
+    }
+
+    .notice {
+        position: fixed;
+        margin: 0;
+    }
 }

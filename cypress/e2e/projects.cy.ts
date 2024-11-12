@@ -6,6 +6,7 @@ describe("verify projects elements", () => {
 
     it("loads projects section elements", () => {
         cy.get('[data-cy="projects-title"]')
+            .first()
             .should("be.visible")
             .and("have.text", "Projects");
 

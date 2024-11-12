@@ -4,7 +4,7 @@ import CustomIntersectionObserver from "@/app/components/CustomIntersectionObser
 import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
 import styles from "./about-section.module.css";
-import BodyTitleSeparator from "./body-title-separator";
+import BodyTitleSeparator from "../../components/body-title-separator";
 
 export default function Summary() {
     const title: string = "About Me";

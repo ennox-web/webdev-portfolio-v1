@@ -25,6 +25,7 @@ export default function SkillChip({
     dataCy,
     disabled = false,
     noSlide = false,
+    clickable = false,
 }: {
     type: string;
     skill: string;
@@ -33,13 +34,15 @@ export default function SkillChip({
     dataCy?: string;
     disabled?: boolean;
     noSlide?: boolean;
+    clickable?: boolean;
 }) {
     const onClickDefault = () => {
         if (onClick) onClick(skill, type);
     };
-    const chipStyle = disabled
-        ? `${chipStylesDisabled[type]} ${styles.chipContainerNoHover}`
-        : `${chipStyles[type]} ${styles.chipContainer}`;
+    let chipStyle = `${chipStyles[type]} ${styles.chipContainer}`;
+    if (disabled)
+        chipStyle = `${chipStylesDisabled[type]} ${styles.chipContainerNoHover}`;
+    if (clickable) chipStyle += ` ${styles.clickable}`;
     return (
         <div>
             <CustomIntersectionObserver

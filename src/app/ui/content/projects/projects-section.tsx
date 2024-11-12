@@ -1,6 +1,6 @@
 import { v4 as uuid } from "uuid";
 
-import BodyTitleSeparator from "../body-title-separator";
+import BodyTitleSeparator from "../../../components/body-title-separator";
 import type { ProjectDataInterface } from "./project-block";
 import ProjectBlock from "./project-block";
 import styles from "./projects-section.module.css";

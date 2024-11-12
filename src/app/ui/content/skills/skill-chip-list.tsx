@@ -23,6 +23,7 @@ export default function SkillChipList({
                         delayOrder={delayOrder}
                         dataCy={`skills-${type}-chip`}
                         onClick={onClick}
+                        clickable={true}
                     />
                 );
             })}

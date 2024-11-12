@@ -1,4 +1,4 @@
-import BodyTitleSeparator from "../body-title-separator";
+import BodyTitleSeparator from "../../../components/body-title-separator";
 import SkillChipList from "./skill-chip-list";
 import styles from "./skill-type.module.css";
 
@@ -35,7 +35,12 @@ export default function SkillType({
 }) {
     return (
         <section className={styles.skillTypeContainer}>
-            <BodyTitleSeparator title={title} dataCy={`skills-title-${type}`} />
+            <BodyTitleSeparator
+                title={title}
+                dataCy={`skills-title-${type}`}
+                titleTag="h5"
+                fadeTitle={true}
+            />
             <SkillChipList
                 type={type}
                 skills={skills[type]}

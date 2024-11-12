@@ -3,7 +3,7 @@ import { calcSlideLeftStyle } from "@/app/lib/helpers";
 
 import SkillChipLists from "../skills/skill-chip-lists";
 import styles from "./experience-block.module.css";
-import Contributions from "../contributions";
+import Contributions from "../../../components/contributions";
 
 export interface ExperienceDataInterface {
     id: string;
@@ -86,7 +86,7 @@ export default function ExperienceBlock({
                 {expData.contributions && (
                     <Contributions
                         contributionList={expData.contributions}
-                        noSlide={true}
+                        noSlide={searchSkill ? true : false}
                     />
                 )}
                 <SkillChipLists

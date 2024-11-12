@@ -11,6 +11,10 @@
     transform: translate(100%, 0%);
 }
 
+.clickable {
+    cursor: pointer;
+}
+
 .languageChip {
     background: #877153 !important;
     color: #FFFBF5;
