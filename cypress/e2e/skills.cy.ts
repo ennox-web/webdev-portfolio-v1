@@ -13,13 +13,13 @@ describe("verify skills elements", () => {
         cy.get('[data-cy="skills-title-tech"]')
             .should("be.visible")
             .and("have.text", "Technical");
-        cy.get('[data-cy="skills-tech-chip"]').should("be.length", 14);
+        cy.get('[data-cy="skills-tech-chip"]').should("be.length", 15);
 
         cy.get('[data-cy="skills-title-devop"]').scrollIntoView();
         cy.get('[data-cy="skills-title-devop"]')
             .should("be.visible")
             .and("have.text", "DevOps");
-        cy.get('[data-cy="skills-devop-chip"]').should("be.length", 3);
+        cy.get('[data-cy="skills-devop-chip"]').should("be.length", 5);
 
         cy.get('[data-cy="skills-title-testauto"]').scrollIntoView();
         cy.get('[data-cy="skills-title-testauto"]')

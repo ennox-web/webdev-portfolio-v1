@@ -69,7 +69,10 @@ export default function ProjectBlock({
                                     data-cy="github-link"
                                     className={styles.link}
                                 >
-                                    <FontAwesomeIcon className={styles.icon} icon={faGithub} />
+                                    <FontAwesomeIcon
+                                        className={styles.icon}
+                                        icon={faGithub}
+                                    />
                                 </Link>
                             )}
                         </h5>

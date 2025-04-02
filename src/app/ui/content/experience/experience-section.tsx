@@ -26,7 +26,15 @@ const experienceData: ExperienceDataInterface[] = [
         ],
         skills: {
             lang: ["Python", "TypeScript", "JavaScript", "HTML", "CSS"],
-            tech: ["Git", "Angular", "MongoDB", "GraphQL", "FastAPI", "Figma", "AWS"],
+            tech: [
+                "Git",
+                "Angular",
+                "MongoDB",
+                "GraphQL",
+                "FastAPI",
+                "Figma",
+                "AWS",
+            ],
             devop: ["Kubernetes", "kind", "Docker", "Helm", "CI/CD"],
             testauto: ["PyTest", "Jest", "Storybook", "Cypress"],
         },
