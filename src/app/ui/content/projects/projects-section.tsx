@@ -10,13 +10,15 @@ const projectsData: ProjectDataInterface[] = [
         id: uuid(),
         name: "MultiCatPro (WIP)",
         description:
-            "A database web application for managing projects and monitoring goal progress across user-defined categories. Currently a work in progress, thus the repo has been made private. Images shown are a mockup and subject to change.",
+            "A solo-developed web application for tracking hobby projects and goals. Currently in active development. Images shown are a mockup and subject to change.",
         details: [
             "Engineered data models for complex MongoDB database.",
             "Designed UX/UI frontend in Figma.",
+            "Containerized with Docker, orchestrated with Kubernetes.",
         ],
         start: "Sept 2024",
         end: "Present",
+        github: "https://github.com/ennox-web/multicatpro",
         skills: {
             lang: ["TypeScript", "JavaScript", "HTML", "CSS", "Python"],
             tech: [
@@ -28,7 +30,7 @@ const projectsData: ProjectDataInterface[] = [
                 "FastAPI",
                 "MongoDB",
             ],
-            devop: ["Kubernetes", "Docker", "CI/CD"],
+            devop: ["Kubernetes", "kind", "Docker", "Helm", "CI/CD"],
             testauto: ["Cypress", "Jest", "Storybook"],
         },
         images: [
@@ -84,7 +86,7 @@ const projectsData: ProjectDataInterface[] = [
         skills: {
             lang: ["Python", "TypeScript", "JavaScript", "HTML", "CSS"],
             tech: ["Git", "Angular", "MongoDB", "GraphQL", "Figma", "AWS"],
-            devop: ["Kubernetes", "Docker", "CI/CD"],
+            devop: ["Kubernetes", "kind", "Docker", "Helm", "CI/CD"],
             testauto: ["PyTest", "Jest", "Storybook", "Cypress"],
         },
         images: [

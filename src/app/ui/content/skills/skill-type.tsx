@@ -18,9 +18,10 @@ const skills: { [id: string]: string[] } = {
         "AWS",
         "Azure",
         "FastAPI",
+        "Flask",
         "PostgreSQL",
     ],
-    devop: ["Kubernetes", "Docker", "CI/CD"],
+    devop: ["Kubernetes", "kind", "Docker", "Helm", "CI/CD"],
     testauto: ["PyTest", "XUnit", "Jest", "Storybook", "Cypress", "Selenium"],
 };
 

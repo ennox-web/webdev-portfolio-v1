@@ -7,6 +7,8 @@ import type { ImageDataInterface } from "./image-card";
 import ImageCardsList from "./image-cards-list";
 import styles from "./project-block.module.css";
 import Contributions from "../../../components/contributions";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 export interface ProjectDataInterface {
     id: string;
@@ -67,11 +69,7 @@ export default function ProjectBlock({
                                     data-cy="github-link"
                                     className={styles.link}
                                 >
-                                    <span
-                                        className={`material-symbols-outlined ${styles.icon}`}
-                                    >
-                                        open_in_new
-                                    </span>
+                                    <FontAwesomeIcon className={styles.icon} icon={faGithub} />
                                 </Link>
                             )}
                         </h5>
